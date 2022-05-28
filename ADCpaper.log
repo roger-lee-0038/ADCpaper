@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.5.10)  24 MAY 2022 16:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.5.10)  28 MAY 2022 12:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -305,7 +305,10 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 55.
 
 (D:\program files\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1{C:/Users/lwzz0/AppData/Local/MiKTeX/2.9/fonts/map/pdftex/pdftex.map}
+)
+Underfull \vbox (badness 1024) has occurred while \output is active []
+
+ [1{C:/Users/lwzz0/AppData/Local/MiKTeX/2.9/fonts/map/pdftex/pdftex.map}
 
 
 ]
@@ -317,7 +320,7 @@ Package epstopdf Info: Source file: <./Figures/SSADC.eps>
 (epstopdf)                    size: 38439 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=./Figures/SSADC-eps-
 converted-to.pdf ./Figures/SSADC.eps>
-(epstopdf)             \includegraphics on input line 90.
+(epstopdf)             \includegraphics on input line 113.
 Package epstopdf Info: Output file is already uptodate.
 
 
@@ -327,7 +330,7 @@ nclusion: found PDF version <1.7>, but at most version <1.5> allowed
 File: ./Figures/SSADC-eps-converted-to.pdf Graphic file (type pdf)
 <use ./Figures/SSADC-eps-converted-to.pdf>
 Package pdftex.def Info: ./Figures/SSADC-eps-converted-to.pdf  used on input li
-ne 90.
+ne 113.
 (pdftex.def)             Requested size: 252.94499pt x 213.86687pt.
 Package epstopdf Info: Source file: <./Figures/SSWAVE.eps>
 (epstopdf)                    date: 2022-05-15 22:22:48
@@ -337,7 +340,7 @@ Package epstopdf Info: Source file: <./Figures/SSWAVE.eps>
 (epstopdf)                    size: 68549 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=./Figures/SSWAVE-eps
 -converted-to.pdf ./Figures/SSWAVE.eps>
-(epstopdf)             \includegraphics on input line 95.
+(epstopdf)             \includegraphics on input line 118.
 Package epstopdf Info: Output file is already uptodate.
 
 
@@ -347,7 +350,7 @@ inclusion: found PDF version <1.7>, but at most version <1.5> allowed
 File: ./Figures/SSWAVE-eps-converted-to.pdf Graphic file (type pdf)
 <use ./Figures/SSWAVE-eps-converted-to.pdf>
 Package pdftex.def Info: ./Figures/SSWAVE-eps-converted-to.pdf  used on input l
-ine 95.
+ine 118.
 (pdftex.def)             Requested size: 252.94499pt x 125.95485pt.
 Package epstopdf Info: Source file: <./Figures/CDS.eps>
 (epstopdf)                    date: 2022-05-24 11:33:38
@@ -357,7 +360,7 @@ Package epstopdf Info: Source file: <./Figures/CDS.eps>
 (epstopdf)                    size: 31376 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=./Figures/CDS-eps-co
 nverted-to.pdf ./Figures/CDS.eps>
-(epstopdf)             \includegraphics on input line 108.
+(epstopdf)             \includegraphics on input line 131.
 Package epstopdf Info: Output file is already uptodate.
 
 
@@ -367,8 +370,10 @@ lusion: found PDF version <1.7>, but at most version <1.5> allowed
 File: ./Figures/CDS-eps-converted-to.pdf Graphic file (type pdf)
 <use ./Figures/CDS-eps-converted-to.pdf>
 Package pdftex.def Info: ./Figures/CDS-eps-converted-to.pdf  used on input line
- 108.
+ 131.
 (pdftex.def)             Requested size: 180.67499pt x 108.23048pt.
+[2 <./Figures/SSADC-eps-converted-to.pdf> <./Figures/SSWAVE-eps-converted-to.pd
+f> <./Figures/CDS-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <./Figures/RAMP.eps>
 (epstopdf)                    date: 2022-05-16 10:07:42
 (epstopdf)                    size: 357650 bytes
@@ -377,20 +382,18 @@ Package epstopdf Info: Source file: <./Figures/RAMP.eps>
 (epstopdf)                    size: 24980 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=./Figures/RAMP-eps-c
 onverted-to.pdf ./Figures/RAMP.eps>
-(epstopdf)             \includegraphics on input line 127.
+(epstopdf)             \includegraphics on input line 150.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex.exe (file ./Figures/RAMP-eps-converted-to.pdf): PDF in
 clusion: found PDF version <1.7>, but at most version <1.5> allowed
-<./Figures/RAMP-eps-converted-to.pdf, id=12, 667.49374pt x 377.41pt>
+<./Figures/RAMP-eps-converted-to.pdf, id=68, 667.49374pt x 377.41pt>
 File: ./Figures/RAMP-eps-converted-to.pdf Graphic file (type pdf)
 <use ./Figures/RAMP-eps-converted-to.pdf>
 Package pdftex.def Info: ./Figures/RAMP-eps-converted-to.pdf  used on input lin
-e 127.
+e 150.
 (pdftex.def)             Requested size: 252.94499pt x 143.01993pt.
-[2 <./Figures/SSADC-eps-converted-to.pdf> <./Figures/SSWAVE-eps-converted-to.pd
-f> <./Figures/CDS-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <./Figures/COM.eps>
 (epstopdf)                    date: 2022-05-16 10:27:22
 (epstopdf)                    size: 480157 bytes
@@ -399,7 +402,7 @@ Package epstopdf Info: Source file: <./Figures/COM.eps>
 (epstopdf)                    size: 31923 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=./Figures/COM-eps-co
 nverted-to.pdf ./Figures/COM.eps>
-(epstopdf)             \includegraphics on input line 138.
+(epstopdf)             \includegraphics on input line 161.
 Package epstopdf Info: Output file is already uptodate.
 
 
@@ -409,7 +412,7 @@ lusion: found PDF version <1.7>, but at most version <1.5> allowed
 File: ./Figures/COM-eps-converted-to.pdf Graphic file (type pdf)
 <use ./Figures/COM-eps-converted-to.pdf>
 Package pdftex.def Info: ./Figures/COM-eps-converted-to.pdf  used on input line
- 138.
+ 161.
 (pdftex.def)             Requested size: 252.94499pt x 108.83713pt.
 Package epstopdf Info: Source file: <./Figures/SAR.eps>
 (epstopdf)                    date: 2022-05-16 11:38:01
@@ -419,7 +422,7 @@ Package epstopdf Info: Source file: <./Figures/SAR.eps>
 (epstopdf)                    size: 24543 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=./Figures/SAR-eps-co
 nverted-to.pdf ./Figures/SAR.eps>
-(epstopdf)             \includegraphics on input line 158.
+(epstopdf)             \includegraphics on input line 192.
 Package epstopdf Info: Output file is already uptodate.
 
 
@@ -429,8 +432,33 @@ lusion: found PDF version <1.7>, but at most version <1.5> allowed
 File: ./Figures/SAR-eps-converted-to.pdf Graphic file (type pdf)
 <use ./Figures/SAR-eps-converted-to.pdf>
 Package pdftex.def Info: ./Figures/SAR-eps-converted-to.pdf  used on input line
- 158.
+ 192.
 (pdftex.def)             Requested size: 252.94499pt x 136.50757pt.
+Package epstopdf Info: Source file: <./Figures/RRAMP.eps>
+(epstopdf)                    date: 2022-05-28 12:25:24
+(epstopdf)                    size: 357983 bytes
+(epstopdf)             Output file: <./Figures/RRAMP-eps-converted-to.pdf>
+(epstopdf)             Command: <miktex-epstopdf --outfile=./Figures/RRAMP-eps-
+converted-to.pdf ./Figures/RRAMP.eps>
+(epstopdf)             \includegraphics on input line 198.
+runsystem(miktex-epstopdf --outfile=./Figures/RRAMP-eps-converted-to.pdf ./Figu
+res/RRAMP.eps)...executed safely (allowed).
+
+Package epstopdf Info: Result file: <./Figures/RRAMP-eps-converted-to.pdf>
+(epstopdf)                    date: 2022-05-28 12:26:03
+(epstopdf)                    size: 24532 bytes.
+
+
+pdfTeX warning: pdflatex.exe (file ./Figures/RRAMP-eps-converted-to.pdf): PDF i
+nclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<./Figures/RRAMP-eps-converted-to.pdf, id=71, 552.0625pt x 355.3275pt>
+File: ./Figures/RRAMP-eps-converted-to.pdf Graphic file (type pdf)
+<use ./Figures/RRAMP-eps-converted-to.pdf>
+Package pdftex.def Info: ./Figures/RRAMP-eps-converted-to.pdf  used on input li
+ne 198.
+(pdftex.def)             Requested size: 252.94499pt x 162.80742pt.
+[3 <./Figures/RAMP-eps-converted-to.pdf> <./Figures/COM-eps-converted-to.pdf> <
+./Figures/SAR-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <./Figures/SARWAVE.eps>
 (epstopdf)                    date: 2022-05-16 19:31:21
 (epstopdf)                    size: 562414 bytes
@@ -439,17 +467,17 @@ Package epstopdf Info: Source file: <./Figures/SARWAVE.eps>
 (epstopdf)                    size: 69751 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=./Figures/SARWAVE-ep
 s-converted-to.pdf ./Figures/SARWAVE.eps>
-(epstopdf)             \includegraphics on input line 184.
+(epstopdf)             \includegraphics on input line 224.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex.exe (file ./Figures/SARWAVE-eps-converted-to.pdf): PDF
  inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<./Figures/SARWAVE-eps-converted-to.pdf, id=71, 888.31876pt x 458.71375pt>
+<./Figures/SARWAVE-eps-converted-to.pdf, id=115, 888.31876pt x 458.71375pt>
 File: ./Figures/SARWAVE-eps-converted-to.pdf Graphic file (type pdf)
 <use ./Figures/SARWAVE-eps-converted-to.pdf>
 Package pdftex.def Info: ./Figures/SARWAVE-eps-converted-to.pdf  used on input 
-line 184.
+line 224.
 (pdftex.def)             Requested size: 289.07999pt x 149.27618pt.
 Package epstopdf Info: Source file: <./Figures/LATCH.eps>
 (epstopdf)                    date: 2022-05-16 19:40:19
@@ -459,20 +487,18 @@ Package epstopdf Info: Source file: <./Figures/LATCH.eps>
 (epstopdf)                    size: 34799 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=./Figures/LATCH-eps-
 converted-to.pdf ./Figures/LATCH.eps>
-(epstopdf)             \includegraphics on input line 192.
+(epstopdf)             \includegraphics on input line 233.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex.exe (file ./Figures/LATCH-eps-converted-to.pdf): PDF i
 nclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<./Figures/LATCH-eps-converted-to.pdf, id=72, 1005.7575pt x 301.125pt>
+<./Figures/LATCH-eps-converted-to.pdf, id=116, 1005.7575pt x 301.125pt>
 File: ./Figures/LATCH-eps-converted-to.pdf Graphic file (type pdf)
 <use ./Figures/LATCH-eps-converted-to.pdf>
 Package pdftex.def Info: ./Figures/LATCH-eps-converted-to.pdf  used on input li
-ne 192.
+ne 233.
 (pdftex.def)             Requested size: 252.94499pt x 75.73134pt.
-[3 <./Figures/RAMP-eps-converted-to.pdf> <./Figures/COM-eps-converted-to.pdf> <
-./Figures/SAR-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <./Figures/SS_pg.eps>
 (epstopdf)                    date: 2022-05-16 21:57:45
 (epstopdf)                    size: 977714 bytes
@@ -481,7 +507,7 @@ Package epstopdf Info: Source file: <./Figures/SS_pg.eps>
 (epstopdf)                    size: 36424 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=./Figures/SS_pg-eps-
 converted-to.pdf ./Figures/SS_pg.eps>
-(epstopdf)             \includegraphics on input line 211.
+(epstopdf)             \includegraphics on input line 261.
 Package epstopdf Info: Output file is already uptodate.
 
 
@@ -491,8 +517,10 @@ nclusion: found PDF version <1.7>, but at most version <1.5> allowed
 File: ./Figures/SS_pg-eps-converted-to.pdf Graphic file (type pdf)
 <use ./Figures/SS_pg-eps-converted-to.pdf>
 Package pdftex.def Info: ./Figures/SS_pg-eps-converted-to.pdf  used on input li
-ne 211.
+ne 261.
 (pdftex.def)             Requested size: 252.94499pt x 137.73206pt.
+[4 <./Figures/RRAMP-eps-converted-to.pdf> <./Figures/SARWAVE-eps-converted-to.p
+df> <./Figures/LATCH-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <./Figures/SAR_pg.eps>
 (epstopdf)                    date: 2022-05-24 12:42:31
 (epstopdf)                    size: 673861 bytes
@@ -501,24 +529,21 @@ Package epstopdf Info: Source file: <./Figures/SAR_pg.eps>
 (epstopdf)                    size: 28925 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=./Figures/SAR_pg-eps
 -converted-to.pdf ./Figures/SAR_pg.eps>
-(epstopdf)             \includegraphics on input line 222.
+(epstopdf)             \includegraphics on input line 275.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex.exe (file ./Figures/SAR_pg-eps-converted-to.pdf): PDF 
 inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<./Figures/SAR_pg-eps-converted-to.pdf, id=118, 852.18375pt x 429.605pt>
+<./Figures/SAR_pg-eps-converted-to.pdf, id=165, 852.18375pt x 429.605pt>
 File: ./Figures/SAR_pg-eps-converted-to.pdf Graphic file (type pdf)
 <use ./Figures/SAR_pg-eps-converted-to.pdf>
 Package pdftex.def Info: ./Figures/SAR_pg-eps-converted-to.pdf  used on input l
-ine 222.
+ine 275.
 (pdftex.def)             Requested size: 252.94499pt x 127.51244pt.
-[4 <./Figures/SARWAVE-eps-converted-to.pdf> <./Figures/LATCH-eps-converted-to.p
-df> <./Figures/SS_pg-eps-converted-to.pdf> <./Figures/SAR_pg-eps-converted-to.p
-df>]
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 2
-33.
- (D:\program files\MiKTeX 2.9\tex/latex/psnfss\ts1ptm.fd
+89.
+(D:\program files\MiKTeX 2.9\tex/latex/psnfss\ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
 Package epstopdf Info: Source file: <./Figures/SSResults1.eps>
@@ -530,17 +555,17 @@ Package epstopdf Info: Source file: <./Figures/SSResults1.eps>
 (epstopdf)                    size: 99559 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=./Figures/SSResults1
 -eps-converted-to.pdf ./Figures/SSResults1.eps>
-(epstopdf)             \includegraphics on input line 268.
+(epstopdf)             \includegraphics on input line 324.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex.exe (file ./Figures/SSResults1-eps-converted-to.pdf): 
 PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<./Figures/SSResults1-eps-converted-to.pdf, id=169, 329.23pt x 166.6225pt>
+<./Figures/SSResults1-eps-converted-to.pdf, id=166, 329.23pt x 166.6225pt>
 File: ./Figures/SSResults1-eps-converted-to.pdf Graphic file (type pdf)
 <use ./Figures/SSResults1-eps-converted-to.pdf>
 Package pdftex.def Info: ./Figures/SSResults1-eps-converted-to.pdf  used on inp
-ut line 268.
+ut line 324.
 (pdftex.def)             Requested size: 252.94499pt x 128.0175pt.
 Package epstopdf Info: Source file: <./Figures/SSResults2.eps>
 (epstopdf)                    date: 2022-05-19 19:32:18
@@ -551,17 +576,17 @@ Package epstopdf Info: Source file: <./Figures/SSResults2.eps>
 (epstopdf)                    size: 63156 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=./Figures/SSResults2
 -eps-converted-to.pdf ./Figures/SSResults2.eps>
-(epstopdf)             \includegraphics on input line 273.
+(epstopdf)             \includegraphics on input line 329.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex.exe (file ./Figures/SSResults2-eps-converted-to.pdf): 
 PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<./Figures/SSResults2-eps-converted-to.pdf, id=170, 819.06pt x 411.5375pt>
+<./Figures/SSResults2-eps-converted-to.pdf, id=167, 819.06pt x 411.5375pt>
 File: ./Figures/SSResults2-eps-converted-to.pdf Graphic file (type pdf)
 <use ./Figures/SSResults2-eps-converted-to.pdf>
 Package pdftex.def Info: ./Figures/SSResults2-eps-converted-to.pdf  used on inp
-ut line 273.
+ut line 329.
 (pdftex.def)             Requested size: 252.94499pt x 127.09178pt.
 Package epstopdf Info: Source file: <./Figures/SARResults1.eps>
 (epstopdf)                    date: 2022-05-19 19:34:24
@@ -572,17 +597,17 @@ Package epstopdf Info: Source file: <./Figures/SARResults1.eps>
 (epstopdf)                    size: 106419 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=./Figures/SARResults
 1-eps-converted-to.pdf ./Figures/SARResults1.eps>
-(epstopdf)             \includegraphics on input line 314.
+(epstopdf)             \includegraphics on input line 370.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex.exe (file ./Figures/SARResults1-eps-converted-to.pdf):
  PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<./Figures/SARResults1-eps-converted-to.pdf, id=171, 330.23375pt x 168.63pt>
+<./Figures/SARResults1-eps-converted-to.pdf, id=168, 330.23375pt x 168.63pt>
 File: ./Figures/SARResults1-eps-converted-to.pdf Graphic file (type pdf)
 <use ./Figures/SARResults1-eps-converted-to.pdf>
 Package pdftex.def Info: ./Figures/SARResults1-eps-converted-to.pdf  used on in
-put line 314.
+put line 370.
 (pdftex.def)             Requested size: 252.94499pt x 129.16876pt.
 Package epstopdf Info: Source file: <./Figures/SARResults2.eps>
 (epstopdf)                    date: 2022-05-19 19:35:58
@@ -593,20 +618,21 @@ Package epstopdf Info: Source file: <./Figures/SARResults2.eps>
 (epstopdf)                    size: 61074 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=./Figures/SARResults
 2-eps-converted-to.pdf ./Figures/SARResults2.eps>
-(epstopdf)             \includegraphics on input line 319.
+(epstopdf)             \includegraphics on input line 375.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex.exe (file ./Figures/SARResults2-eps-converted-to.pdf):
  PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<./Figures/SARResults2-eps-converted-to.pdf, id=172, 822.07124pt x 415.5525pt>
+<./Figures/SARResults2-eps-converted-to.pdf, id=169, 822.07124pt x 415.5525pt>
 File: ./Figures/SARResults2-eps-converted-to.pdf Graphic file (type pdf)
 <use ./Figures/SARResults2-eps-converted-to.pdf>
 Package pdftex.def Info: ./Figures/SARResults2-eps-converted-to.pdf  used on in
-put line 319.
+put line 375.
 (pdftex.def)             Requested size: 252.94499pt x 127.86247pt.
-[5 <./Figures/SSResults1-eps-converted-to.pdf> <./Figures/SSResults2-eps-conver
-ted-to.pdf> <./Figures/SARResults1-eps-converted-to.pdf>]
+[5 <./Figures/SS_pg-eps-converted-to.pdf> <./Figures/SAR_pg-eps-converted-to.pd
+f> <./Figures/SSResults1-eps-converted-to.pdf> <./Figures/SSResults2-eps-conver
+ted-to.pdf>]
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -618,31 +644,30 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[6
-
- <./Figures/SARResults2-eps-converted-to.pdf>] (ADCpaper.aux) ) 
+[6 <./Figures/SARResults1-eps-converted-to.pdf> <./Figures/SARResults2-eps-conv
+erted-to.pdf>] (ADCpaper.aux) ) 
 Here is how much of TeX's memory you used:
- 4366 strings out of 478681
- 69976 string characters out of 2853215
- 374395 words of memory out of 3000000
- 22396 multiletter control sequences out of 15000+600000
+ 4374 strings out of 478681
+ 70229 string characters out of 2853215
+ 372404 words of memory out of 3000000
+ 22403 multiletter control sequences out of 15000+600000
  510990 words of font info for 114 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,11n,62p,1006b,332s stack positions out of 10000i,1000n,20000p,200000b,80000s
-{D:/program file
-s/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<D:/program files/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmex10.pfb><D:/program files/MiKTeX 2.9/fonts/type1/publi
-c/amsfonts/cm/cmmi10.pfb><D:/program files/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/cm/cmmi7.pfb><D:/program files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr
-10.pfb><D:/program files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><D:
-/program files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/program
- files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><D:/program files/Mi
-KTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><D:/program files/MiKTeX 2.9/fonts/ty
-pe1/urw/times/utmbi8a.pfb><D:/program files/MiKTeX 2.9/fonts/type1/urw/times/ut
-mr8a.pfb><D:/program files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on ADCpaper.pdf (6 pages, 850602 bytes).
+ 55i,11n,62p,1012b,332s stack positions out of 10000i,1000n,20000p,200000b,80000s
+{D:/program files/MiKTeX 2.9/fonts/enc/dvips/bas
+e/8r.enc}<D:/program files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb
+><D:/program files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><D:/pro
+gram files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><D:/program file
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/program files/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><D:/program files/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmsy10.pfb><D:/program files/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmsy7.pfb><D:/program files/MiKTeX 2.9/fonts/type1/urw/times/u
+tmb8a.pfb><D:/program files/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><D:/pr
+ogram files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><D:/program files/MiKTe
+X 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on ADCpaper.pdf (6 pages, 876133 bytes).
 PDF statistics:
- 350 PDF objects out of 1000 (max. 8388607)
+ 367 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 71 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 76 words of extra memory for PDF output out of 10000 (max. 10000000)
 
