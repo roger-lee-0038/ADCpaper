@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.5.10)  30 MAY 2022 14:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.5.10)  31 MAY 2022 00:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -305,7 +305,12 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 55.
 
 (D:\program files\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1{C:/Users/lwzz0/AppData/Local/MiKTeX/2.9/fonts/map/pdftex/pdftex.map}
+)
+
+LaTeX Warning: Citation `Ternary Weight Networks' on page 1 undefined on input 
+line 82.
+
+[1{C:/Users/lwzz0/AppData/Local/MiKTeX/2.9/fonts/map/pdftex/pdftex.map}
 
 
 ]
@@ -330,11 +335,11 @@ Package pdftex.def Info: ./Figures/SSADC-eps-converted-to.pdf  used on input li
 ne 130.
 (pdftex.def)             Requested size: 252.94499pt x 213.86687pt.
 Package epstopdf Info: Source file: <./Figures/SSWAVE.eps>
-(epstopdf)                    date: 2022-05-30 13:42:05
-(epstopdf)                    size: 570581 bytes
+(epstopdf)                    date: 2022-05-31 00:56:58
+(epstopdf)                    size: 570742 bytes
 (epstopdf)             Output file: <./Figures/SSWAVE-eps-converted-to.pdf>
-(epstopdf)                    date: 2022-05-30 13:48:57
-(epstopdf)                    size: 68192 bytes
+(epstopdf)                    date: 2022-05-31 00:57:30
+(epstopdf)                    size: 68138 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=./Figures/SSWAVE-eps
 -converted-to.pdf ./Figures/SSWAVE.eps>
 (epstopdf)             \includegraphics on input line 136.
@@ -343,12 +348,12 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: pdflatex.exe (file ./Figures/SSWAVE-eps-converted-to.pdf): PDF 
 inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<./Figures/SSWAVE-eps-converted-to.pdf, id=10, 1142.2675pt x 565.11125pt>
+<./Figures/SSWAVE-eps-converted-to.pdf, id=10, 1130.2225pt x 558.085pt>
 File: ./Figures/SSWAVE-eps-converted-to.pdf Graphic file (type pdf)
 <use ./Figures/SSWAVE-eps-converted-to.pdf>
 Package pdftex.def Info: ./Figures/SSWAVE-eps-converted-to.pdf  used on input l
 ine 136.
-(pdftex.def)             Requested size: 252.94499pt x 125.1354pt.
+(pdftex.def)             Requested size: 252.94499pt x 124.89948pt.
 Package epstopdf Info: Source file: <./Figures/CDS.eps>
 (epstopdf)                    date: 2022-05-24 11:33:38
 (epstopdf)                    size: 476651 bytes
@@ -451,17 +456,14 @@ File: ./Figures/RRAMP-eps-converted-to.pdf Graphic file (type pdf)
 Package pdftex.def Info: ./Figures/RRAMP-eps-converted-to.pdf  used on input li
 ne 240.
 (pdftex.def)             Requested size: 252.94499pt x 162.80742pt.
-
-Underfull \vbox (badness 2237) has occurred while \output is active []
-
- [3 <./Figures/RAMP-eps-converted-to.pdf> <./Figures/COM-eps-converted-to.pdf> 
-<./Figures/SAR-eps-converted-to.pdf>]
+[3 <./Figures/RAMP-eps-converted-to.pdf> <./Figures/COM-eps-converted-to.pdf> <
+./Figures/SAR-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <./Figures/SARWAVE.eps>
-(epstopdf)                    date: 2022-05-30 13:40:42
-(epstopdf)                    size: 550821 bytes
+(epstopdf)                    date: 2022-05-31 00:56:17
+(epstopdf)                    size: 551042 bytes
 (epstopdf)             Output file: <./Figures/SARWAVE-eps-converted-to.pdf>
-(epstopdf)                    date: 2022-05-30 13:48:59
-(epstopdf)                    size: 68134 bytes
+(epstopdf)                    date: 2022-05-31 00:57:32
+(epstopdf)                    size: 68042 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=./Figures/SARWAVE-ep
 s-converted-to.pdf ./Figures/SARWAVE.eps>
 (epstopdf)             \includegraphics on input line 266.
@@ -470,12 +472,12 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: pdflatex.exe (file ./Figures/SARWAVE-eps-converted-to.pdf): PDF
  inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<./Figures/SARWAVE-eps-converted-to.pdf, id=115, 1141.26375pt x 607.26875pt>
+<./Figures/SARWAVE-eps-converted-to.pdf, id=115, 1118.1775pt x 577.15625pt>
 File: ./Figures/SARWAVE-eps-converted-to.pdf Graphic file (type pdf)
 <use ./Figures/SARWAVE-eps-converted-to.pdf>
 Package pdftex.def Info: ./Figures/SARWAVE-eps-converted-to.pdf  used on input 
 line 266.
-(pdftex.def)             Requested size: 289.07999pt x 153.8183pt.
+(pdftex.def)             Requested size: 252.94499pt x 130.55908pt.
 Package epstopdf Info: Source file: <./Figures/LATCH.eps>
 (epstopdf)                    date: 2022-05-16 19:40:19
 (epstopdf)                    size: 487793 bytes
@@ -630,8 +632,17 @@ File: ./Figures/SARResults2-eps-converted-to.pdf Graphic file (type pdf)
 Package pdftex.def Info: ./Figures/SARResults2-eps-converted-to.pdf  used on in
 put line 455.
 (pdftex.def)             Requested size: 252.94499pt x 124.26509pt.
-[6 <./Figures/SSResults2-eps-converted-to.pdf> <./Figures/SARResults1-eps-conve
-rted-to.pdf> <./Figures/SARResults2-eps-converted-to.pdf>]
+(ADCpaper.bbl [6 <./Figures/SSResults2-eps-converted-to.pdf> <./Figures/SARResu
+lts1-eps-converted-to.pdf> <./Figures/SARResults2-eps-converted-to.pdf>]
+LaTeX Font Info:    Trying to load font information for OMS+ptm on input line 8
+4.
+
+(D:\program files\MiKTeX 2.9\tex/latex/psnfss\omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <8> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 84.
+)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -645,30 +656,34 @@ Before submitting the final camera ready copy, remember to:
 
 [7
 
-] (ADCpaper.aux) ) 
+] (ADCpaper.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 4377 strings out of 478681
- 70261 string characters out of 2853215
- 372404 words of memory out of 3000000
- 22405 multiletter control sequences out of 15000+600000
- 513123 words of font info for 117 fonts, out of 8000000 for 9000
+ 4425 strings out of 478681
+ 71223 string characters out of 2853215
+ 372446 words of memory out of 3000000
+ 22445 multiletter control sequences out of 15000+600000
+ 515680 words of font info for 120 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,13n,62p,306b,345s stack positions out of 10000i,1000n,20000p,200000b,80000s
-{D:/program files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<D:/
-program files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/program 
-files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><D:/program files/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><D:/program files/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmmi8.pfb><D:/program files/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmr10.pfb><D:/program files/MiKTeX 2.9/fonts/type1/public
-/amsfonts/cm/cmr6.pfb><D:/program files/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmr7.pfb><D:/program files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pf
-b><D:/program files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/pr
-ogram files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><D:/program fil
-es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><D:/program files/MiKTeX
- 2.9/fonts/type1/urw/times/utmb8a.pfb><D:/program files/MiKTeX 2.9/fonts/type1/
-urw/times/utmbi8a.pfb><D:/program files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a
-.pfb><D:/program files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on ADCpaper.pdf (7 pages, 916440 bytes).
+ 55i,13n,62p,392b,345s stack positions out of 10000i,1000n,20000p,200000b,80000s
+{D:/program files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<D:/program files/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/program files/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmmi10.pfb><D:/program files/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmmi7.pfb><D:/program files/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmmi8.pfb><D:/program files/MiKTeX 2.9/fonts/type1/public/amsfon
+ts/cm/cmr10.pfb><D:/program files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr
+6.pfb><D:/program files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><D:/
+program files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><D:/program fi
+les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/program files/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><D:/program files/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmsy8.pfb><D:/program files/MiKTeX 2.9/fonts/type1
+/urw/times/utmb8a.pfb><D:/program files/MiKTeX 2.9/fonts/type1/urw/times/utmbi8
+a.pfb><D:/program files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><D:/program
+ files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on ADCpaper.pdf (7 pages, 923485 bytes).
 PDF statistics:
  399 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

@@ -1,0 +1,93 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: ADCpaper.aux
+White space in argument---line 3 of file ADCpaper.aux
+ : \citation{Ternary
+ :                   Weight Networks}
+I'm skipping whatever remains of this command
+Reallocating 'name_of_file' (item size: 1) to 9 items.
+The style file: IEEEtran.bst
+Reallocating 'name_of_file' (item size: 1) to 9 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'wiz_functions' (item size: 4) to 6000 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Database file #1: ADCpaper.bib
+Warning--entry type for "keating_low_2007" isn't style-file defined
+--line 20 of file ADCpaper.bib
+Warning--I didn't find a database entry for "1"
+Warning--I didn't find a database entry for "2"
+Warning--I didn't find a database entry for "3"
+-- IEEEtran.bst version 1.12 (2007/01/11) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+Warning--empty year in leibe_xnor-net_2016
+Warning--empty year in park_energy-efficient_2018
+Warning--empty journal in chiu_4-kb_2020
+Warning--empty year in chiu_4-kb_2020
+Warning--empty journal in jung_crossbar_2022
+Warning--empty year in jung_crossbar_2022
+Warning--empty journal in xia_10-bit_2006
+Warning--empty year in xia_10-bit_2006
+Warning--empty journal in zhu_06_2013
+Warning--empty year in zhu_06_2013
+Warning--empty journal in zhu_6--10-bit_2015
+Warning--empty year in zhu_6--10-bit_2015
+Warning--empty journal in lubana_digital_2018
+Warning--empty year in lubana_digital_2018
+Warning--empty year in likamwa_energy_2013
+Warning--empty year in likamwa_redeye_2016
+Warning--empty journal in liu_ns-cim_2020
+Warning--empty year in liu_ns-cim_2020
+Warning--empty year in snoeij_18v_2005
+Warning--empty journal in kleinfelder_10000_2001
+Warning--empty year in kleinfelder_10000_2001
+Warning--empty journal in kim_area-efficient_2016
+Warning--empty year in kim_area-efficient_2016
+Warning--empty journal in razavi_design_1992
+Warning--empty year in razavi_design_1992
+
+Done.
+You've used 18 entries,
+            4014 wiz_defined-function locations,
+            922 strings with 12428 characters,
+and the built_in function-call counts, 16679 in all, are:
+= -- 1221
+> -- 565
+< -- 162
++ -- 308
+- -- 105
+* -- 868
+:= -- 2223
+add.period$ -- 41
+call.type$ -- 18
+change.case$ -- 23
+chr.to.int$ -- 378
+cite$ -- 43
+duplicate$ -- 1134
+empty$ -- 1192
+format.name$ -- 123
+if$ -- 3810
+int.to.chr$ -- 0
+int.to.str$ -- 18
+missing$ -- 231
+newline$ -- 111
+num.names$ -- 19
+pop$ -- 582
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 2
+skip$ -- 1197
+stack$ -- 0
+substring$ -- 912
+swap$ -- 999
+text.length$ -- 36
+text.prefix$ -- 0
+top$ -- 5
+type$ -- 18
+warning$ -- 25
+while$ -- 75
+width$ -- 20
+write$ -- 214
+(There was 1 error message)

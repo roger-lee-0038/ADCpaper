@@ -62,7 +62,7 @@ which dominate the power consumption of traditional sensing systems, can also be
 In this work, we focus on the column-parallel ADCs which are widely applied in the image processing applications and Compute-in-Memory (CIM) architecture, and 
 an efficient and implementation-friendly method of the precision-adaptive column-parallel ADC design is proposed with fine-grained power gating strategies.
 We present two case study ADC designs applied in CMOS Image Proceessors (CISs) and demonstrate the effectiveness of the proposed method in detail. 
-Results show that almost a half of the ADCs’ power consumption can be saved for low-precision conversion, while just a few of cost of extra control circuits is required.
+Results show that almost a half of the ADCs’ power consumption can be saved for low-precision conversion, while just a few of extra control circuits is required.
 
 \end{abstract}
 
@@ -79,7 +79,7 @@ for collecting and processing data in site and in time. On the other hand, Neura
 and robotics. Therefore, deploying NNs on edge devices is an emerging trend which leads to many efforts of research. 
 
 To integrate large and computationally intensive NN models on edge devices of which the power supply and computing resources are quite limited, improving the systems' energy efficiency is critical. 
-While precision-compressed NN models and implementation with CIM architecture have been extensively studied [xxxx], Analog-to-Digital Converters, which dominate the power consumption of 
+While precision-compressed NN models \cite{leibe_xnor-net_2016}\cite{Ternary Weight Networks}\cite{park_energy-efficient_2018} and implementation with CIM architecture \cite{chiu_4-kb_2020}\cite{karunaratne_-memory_2020}\cite{jung_crossbar_2022} have been extensively studied, Analog-to-Digital Converters, which dominate the power consumption of 
 traditional sensing systems, can also be precision-adaptively designed for more intelligent edge computing.
 %can also be smartly designed for more intelligent edge computing. 
 
@@ -87,12 +87,12 @@ traditional sensing systems, can also be precision-adaptively designed for more 
 %the systems' energy efficiency by taking algorithm-aware adjustments inside the ADCs. Considering the precision (i.e. the quantization bits) is at the heart of an ADC’s energy constraints, 
 %making it dynamically adaptive will be promising.
 
-There have been related works on precision-configurable ADC design [xxx]. However, these works mainly focus on a single Successive Approximation Register (SAR) ADC with complex extra control logic,
+There have been related works on precision-configurable ADC design \cite{xia_10-bit_2006}\cite{zhu_06_2013}\cite{zhu_6--10-bit_2015}. However, these works mainly focus on a single Successive Approximation Register (SAR) or pipeline ADC with complex extra control logic,
 which is not suitable for image processing applications and CIM architecture where high throughput is required thus the ADCs are usually in the column-parallel style and the Single-Slope(SS)
 conversion logic is widely adopted to avoid overhead of area and power.
 
-Other works have dynamically adjusted the the camera’s resolution for more efficeient image processing[xxxx], where the precision of ADCs has not been considered as a variable. 
-Besides, there are efforts trying to relieve the design specifications of ADCs by applying low-precision analog computing (whether with CIM architecture or not) firstly close to the sensor [x]. 
+Other works have dynamically adjusted the the camera’s resolution or clock frequency for more efficeient image processing \cite{lubana_digital_2018}\cite{likamwa_energy_2013}, where the precision of ADCs has not been considered as a variable. 
+Besides, there are efforts trying to relieve the design specifications of ADCs by applying low-precision analog computing (whether with CIM architecture or not) firstly close to the sensor \cite{likamwa_redeye_2016}\cite{chen_asp_2016}\cite{liu_ns-cim_2020}. 
 But high-precision ADCs and NN processors are still there for complex tasks. Therefore, taking algorithm-aware adjustments inside ADCs remains competitive.
 
 Motivated by these facts, we mainly makes the following contributions in this paper:
@@ -100,7 +100,7 @@ Motivated by these facts, we mainly makes the following contributions in this pa
 \begin{enumerate}[\IEEEsetlabelwidth{3)}]
 	\item 
 	Two case study ADC designs applied in the CISs are presented with different design specifications. 
-	The first one is column-parallel SS ADCs and the second is column-parallel SAR/SS ADCs.
+	The first one is column-parallel SS ADCs \cite{snoeij_18v_2005}\cite{kleinfelder_10000_2001} and the second is column-parallel SAR/SS ADCs \cite{kim_area-efficient_2016}.
 	Both of the two designs are built completely with not only main functional modules but also bandgap circuits, bias circuits and necessary buffers.
 	\item 
 	We analyse the power distribution across all related circuits of the ADCs, according to which a method combining adaptive precision and fine-grained power gating strategies is proposed
@@ -147,7 +147,7 @@ amplifying the difference by a certain coefficient. The difference (i.e. $\Delta
 and the subtraction will help cancel the noises caused by the varying reference voltages. 
 
 Switched-capacitor operational amplifiers are commonly used in CDS circuits as presented in Fig.~\ref{CDS}. According to the law of charge conservation, 
-the output voltage of the CDS circuits (in PHASE2 of Fig.~\ref{SSWAVE}) can be calculated as \eqref{eq1}. It is noticed that the Input Offset Cancelation (IOS) is realized, 
+the output voltage of the CDS circuits (in PHASE2 of Fig.~\ref{SSWAVE}) can be calculated as \eqref{eq1}. It is noticed that the Input Offset Cancelation (IOS) is realized \cite{razavi_design_1992}, 
 which is necessary because the amplifiers in different columns may have different offset voltage.
 
 \begin{figure}[htbp]
@@ -263,13 +263,13 @@ with the SAR logic and the lower 6-bit results (as the last item of \eqref{eq6})
 \end{equation}
 
 \begin{figure}[htbp]
-	\centerline{\includegraphics[width=4in]{./Figures/SARWAVE.eps}}
+	\centerline{\includegraphics[width=3.5in]{./Figures/SARWAVE.eps}}
 	\caption{the Structure of the SAR Sub-ADCs in the SAR/SS ADCs.}
 	\label{SARWAVE}
 \end{figure} 
 
 As for the comparators inside the SAR sub-ADCs, traditional structure of a strong-arm comparator with pre-amplifiers is adopted as presented in Fig.~\ref{LATCH}. Such comparators 
-are suitable for multiple comparisons because high speed is easy to achieve. Besides, the pre-amps’ offset voltages can be canceled effectively through the Output Offset Cancelation (OOS) [x].
+are suitable for multiple comparisons because high speed is easy to achieve. Besides, the pre-amps’ offset voltages can be canceled effectively through the Output Offset Cancelation (OOS) \cite{razavi_design_1992}.
 
 \begin{figure}[htbp]
 	\centerline{\includegraphics[width=3.5in]{./Figures/LATCH.eps}}
@@ -284,7 +284,7 @@ are suitable for multiple comparisons because high speed is easy to achieve. Bes
 
 \subsection{Power Gating Implementation}
 
-The power gating can be implemented simply by adding PMOS-transistor switches between the functional blocks and the supply voltage [x]. 
+The power gating can be implemented simply by adding PMOS-transistor switches between the functional blocks and the supply voltage \cite{keating_low_2007}. 
 When the switches are turned off, the corresponding blocks’ current paths will be cut off, thus the energy is saved. 
 It is obvious that the more currents are under control, the more effective the power gating can be. However, to avoid unacceptable IR drop, the total size of the switches may be large, 
 thus inverters should be inserted between the control signal and the switches’ gates for adequate driving capability. 
@@ -472,19 +472,12 @@ the corresponding power consumption and energy-saving performance can also be es
 
 In this work, a method combining adaptive precision and fine-grained power gating strategies is proposed for column-parallel ADC design. 
 According to the evaluation results of two CIS-applied ADC designs, almost a half of the ADCs’ power consumption can be reduced for low-precision conversion, 
-while little cost of extra control circuits is required.
+while just a few of extra control circuits is required.
 
 The method in this paper may resonate with varying downstream algorithms, especially powerful NN models, for efficient multi-tasks analysis. 
 As such an integrated system will be promising for more intelligent edge computing in the future, further works on the co-design of ADCs and NNs remain to be developed.
 
-\begin{thebibliography}{00}
-\bibitem{b1} G. Eason, B. Noble, and I. N. Sneddon, ``On certain integrals of Lipschitz-Hankel type involving products of Bessel functions,'' Phil. Trans. Roy. Soc. London, vol. A247, pp. 529--551, April 1955.
-\bibitem{b2} J. Clerk Maxwell, A Treatise on Electricity and Magnetism, 3rd ed., vol. 2. Oxford: Clarendon, 1892, pp.68--73.
-\bibitem{b3} I. S. Jacobs and C. P. Bean, ``Fine particles, thin films and exchange anisotropy,'' in Magnetism, vol. III, G. T. Rado and H. Suhl, Eds. New York: Academic, 1963, pp. 271--350.
-\bibitem{b4} K. Elissa, ``Title of paper if known,'' unpublished.
-\bibitem{b5} R. Nicole, ``Title of paper with only first word capitalized,'' J. Name Stand. Abbrev., in press.
-\bibitem{b6} Y. Yorozu, M. Hirano, K. Oka, and Y. Tagawa, ``Electron spectroscopy studies on magneto-optical media and plastic substrate interface,'' IEEE Transl. J. Magn. Japan, vol. 2, pp. 740--741, August 1987 [Digests 9th Annual Conf. Magnetics Japan, p. 301, 1982].
-\bibitem{b7} M. Young, The Technical Writer's Handbook. Mill Valley, CA: University Science, 1989.
-\end{thebibliography}
+\bibliographystyle{IEEEtran}
+\bibliography{ADCpaper}
 
 \end{document}
