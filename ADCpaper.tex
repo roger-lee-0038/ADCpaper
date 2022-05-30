@@ -321,7 +321,7 @@ leaving the 4-bit results converted completely by the SAR logic.
 
 Compared with the SS ADCs, the one-hot counter in the SAR/SS ADCs does not need to support two modes for adaptive precision. 
 Besides, the start signal of the ramp generator and the power off signal of the buffers can also be the same. Therefore, the SAR/SS ADCs relatively require less extra control circuits.
-As for the proportion between the power off time and the conversion time, 68/82 is achieved in the SAR/SS ADCs, which is similar to the number 240/256 in the SS ADCs.
+As for the proportion between the power off time and the conversion time, 64/78 is achieved in the SAR/SS ADCs, which is a little less than the number 240/256 in the SS ADCs.
 
 \begin{figure}[htbp]
 	\centerline{\includegraphics[width=3.5in]{./Figures/SAR_pg.eps}}
@@ -373,12 +373,13 @@ where the peripheral circuits include a bandgap and voltage divider, some level-
 		    \hline
 		    \textbf{Power (per column)}&	40.8/76.2 uW \\
 		    \hline
-		    \textbf{SNDR}& 23.83/46.64 dB@ 10.06 kHz\\
+		    \textbf{SNDR}& 23.83/46.64 dB@ 8.44 kHz\\
 		    \hline
 			\textbf{ENOB}& 3.67/7.46 bits\\
 			\hline
-		    \textbf{Fom}& 38.59/5.21 pJ/step\\
-		    \hline	    
+		    \textbf{FOM$^{\mathrm{a}}$}& 38.59/5.21 pJ/step\\
+		    \hline
+		    \multicolumn{2}{l}{$^{\mathrm{a}}\textbf{FOM}=(\textbf{Power}\ast \textbf{Conversion}\ \textbf{time})/2^{\textbf{ENOB}}$ }	    
 		\end{tabular}
 		\label{tab1}
 	\end{center}
@@ -436,8 +437,9 @@ The related quantity results is presented in Fig.~\ref{SARresults2}.
 			\hline
 			\textbf{ENOB}& 3.74/9.32 bits \\
 			\hline
-			\textbf{Fom}& 103.64/4.05 pJ/step\\
-			\hline	    
+			\textbf{FOM$^{\mathrm{a}}$}& 103.64/4.05 pJ/step\\
+			\hline
+			\multicolumn{2}{l}{$^{\mathrm{a}}\textbf{FOM}=(\textbf{Power}\ast \textbf{Conversion}\ \textbf{time})/2^{\textbf{ENOB}}$ }	    
 		\end{tabular}
 		\label{tab2}
 	\end{center}
