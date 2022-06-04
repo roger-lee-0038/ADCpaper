@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.5.10)  31 MAY 2022 10:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.5.10)  4 JUN 2022 10:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -305,12 +305,7 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 55.
 
 (D:\program files\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-
-LaTeX Warning: Citation `Ternary Weight Networks' on page 1 undefined on input 
-line 82.
-
-[1{C:/Users/lwzz0/AppData/Local/MiKTeX/2.9/fonts/map/pdftex/pdftex.map}
+) [1{C:/Users/lwzz0/AppData/Local/MiKTeX/2.9/fonts/map/pdftex/pdftex.map}
 
 
 ]
@@ -634,14 +629,14 @@ put line 455.
 (pdftex.def)             Requested size: 252.94499pt x 124.26509pt.
 (ADCpaper.bbl [6 <./Figures/SSResults2-eps-converted-to.pdf> <./Figures/SARResu
 lts1-eps-converted-to.pdf> <./Figures/SARResults2-eps-converted-to.pdf>]
-LaTeX Font Info:    Trying to load font information for OMS+ptm on input line 8
-4.
+LaTeX Font Info:    Trying to load font information for OMS+ptm on input line 9
+0.
 
 (D:\program files\MiKTeX 2.9\tex/latex/psnfss\omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 84.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 90.
 )
 
 ** Conference Paper **
@@ -656,34 +651,30 @@ Before submitting the final camera ready copy, remember to:
 
 [7
 
-] (ADCpaper.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+] (ADCpaper.aux) ) 
 Here is how much of TeX's memory you used:
- 4425 strings out of 478681
- 71223 string characters out of 2853215
- 372446 words of memory out of 3000000
+ 4424 strings out of 478681
+ 71209 string characters out of 2853215
+ 372450 words of memory out of 3000000
  22445 multiletter control sequences out of 15000+600000
- 515680 words of font info for 120 fonts, out of 8000000 for 9000
+ 514573 words of font info for 119 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,13n,62p,392b,345s stack positions out of 10000i,1000n,20000p,200000b,80000s
-{D:/program files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<D:/program files/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/program files/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmmi10.pfb><D:/program files/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/cm/cmmi7.pfb><D:/program files/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmmi8.pfb><D:/program files/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/cm/cmr10.pfb><D:/program files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr
-6.pfb><D:/program files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><D:/
-program files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><D:/program fi
-les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/program files/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><D:/program files/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmsy8.pfb><D:/program files/MiKTeX 2.9/fonts/type1
-/urw/times/utmb8a.pfb><D:/program files/MiKTeX 2.9/fonts/type1/urw/times/utmbi8
-a.pfb><D:/program files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><D:/program
- files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on ADCpaper.pdf (7 pages, 923512 bytes).
+ 55i,13n,62p,384b,345s stack positions out of 10000i,1000n,20000p,200000b,80000s
+{D:/program files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<D:/
+program files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/program 
+files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><D:/program files/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><D:/program files/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmmi8.pfb><D:/program files/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmr10.pfb><D:/program files/MiKTeX 2.9/fonts/type1/public
+/amsfonts/cm/cmr6.pfb><D:/program files/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmr7.pfb><D:/program files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pf
+b><D:/program files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/pr
+ogram files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><D:/program fil
+es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><D:/program files/MiKTeX
+ 2.9/fonts/type1/urw/times/utmb8a.pfb><D:/program files/MiKTeX 2.9/fonts/type1/
+urw/times/utmbi8a.pfb><D:/program files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a
+.pfb><D:/program files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on ADCpaper.pdf (7 pages, 923139 bytes).
 PDF statistics:
  399 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

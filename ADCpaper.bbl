@@ -31,6 +31,12 @@ M.~Rastegari, V.~Ordonez, J.~Redmon, and A.~Farhadi, ``{XNOR}-net: {ImageNet}
   Notes in Computer Science.
 \BIBentrySTDinterwordspacing
 
+\bibitem{li_ternary_2016}
+\BIBentryALTinterwordspacing
+F.~Li, B.~Zhang, and B.~Liu, ``Ternary weight networks,'' number:
+  {arXiv}:1605.04711.
+\BIBentrySTDinterwordspacing
+
 \bibitem{park_energy-efficient_2018}
 \BIBentryALTinterwordspacing
 E.~Park, D.~Kim, and S.~Yoo, ``Energy-efficient neural network accelerator
