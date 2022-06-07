@@ -1,14 +1,14 @@
 \section{Introduction}
 
-With the development of the internet-of-things (IoT), edge devices like mobile phones, smart watches, and other portable products have been playing an important role in people’s daily lives 
+With the development of the Internet-of-Things (IoT), edge devices like mobile phones, smart watches, and other portable products have been playing an important role in people’s daily lives 
 for collecting and processing data in site and in time. On the other hand, deep-learning algorithms have shown broad prospects for sensing applications, such as computer vision, speech recognition, 
-and robotics. Therefore, it has been an emerging trend to achieve deep-learning empowered edge intelligence, which leads to many efforts of research. 
+and robotics. Therefore, it has been an emerging trend to implement deep-learning empowered edge intelligence, which leads to many efforts of research. 
 
-To integrate large and computationally intensive deep-learning algorithms on edge devices of which the power supply and computing resources are quite limited, the primary design constraint will be the energy efficiency.
+To integrate large and computationally intensive deep-learning models on edge devices of which the power supply and computing resources are quite limited, the primary design constraint will be the energy efficiency.
 
 While more and more deep-learning algorithms have harnessed the redundancy of sensory data and improved the energy efficiency through precision-adaptive computing \cite{leibe_xnor-net_2016}\cite{li_ternary_2016}\cite{park_energy-efficient_2018}, 
 Analog-to-Digital Converters, which dominate the power consumption of 
-traditional sensing systems, are generally equipped with fixed precision capabilities. Therefore, opportunities have been offered to take adaptive-precision adjustments inside the ADCs for further lowering the energy barrier of edge sensing and computation. 
+traditional sensing systems, are still generally equipped with fixed precision capabilities. Therefore, opportunities have been offered to take adaptive-precision adjustments inside the ADCs for further lowering the energy barrier of edge sensing and computation. 
 %and implementation with CIM architecture \cite{chiu_4-kb_2020}\cite{karunaratne_-memory_2020}\cite{jung_crossbar_2022} have been extensively studied, 
 %can also be precision-adaptively designed for more intelligent edge computing.
 %can also be smartly designed for more intelligent edge computing. 
@@ -26,19 +26,18 @@ Motivated by these facts, we mainly makes the following contributions in this pa
 	\item 
 	The proposed method has been applied to widely used column-parallel ADCs, with two ADC design studies targeting data-intensive CMOS image processing.
 	
-	The first design is column-parallel single-slope (SS) ADCs \cite{snoeij_18v_2005}\cite{kleinfelder_10000_2001} and the second is column-parallel successive approximation register (SAR)/SS ADCs \cite{kim_area-efficient_2016}.
-	Both of the two designs are built completely with not only main functional modules but also peripheral circuits including bandgap circuits, bias circuits and necessary buffers.
+	The first design is column-parallel Single-Slope (SS) ADCs \cite{snoeij_18v_2005}\cite{kleinfelder_10000_2001} and the second is column-parallel Successive Approximation Register (SAR)/SS ADCs \cite{kim_area-efficient_2016}.
+	Both of the two designs are completely built with not only main functional modules but also peripheral circuits including bandgap circuits, bias circuits and necessary buffers. And the ADCs' energy distribution across different modules is specifically analysed. 
 	%Two case study ADC designs applied in the CISs are presented with different design specifications.
     %according to which a method combining adaptive precision and fine-grained power gating strategies is proposed
     %for more smart data conversion.   
 	\item 
-	Although with different design specificaitons, we apply this method successfully to the two ADC designs with the same principles according to specific power distribution analysis.
-	Therefore, we argue for the universality of the proposed design.
+	Although with different design specificaitons, the proposed method is successfully applied to the two ADC architectures with the same principles, which shows universalty. Besides, the strengths and weaknesses of applying the two diffenrent ADC architectures are discussed in detail.
 \end{enumerate} 
 
 The remainder of this paper is organized as follows. 
 Sect.~\ref{related} presents some related works.
 Sect.~\ref{architecture} shows the architecture overview of the two case study ADC designs. 
 Sect.~\ref{strategy} describes the implementation of the proposed method for the two case study ADC designs. 
-Sect.~\ref{result} reports the evaluation results and Sect.~\ref{discussion} develops discussions. 
+Sect.~\ref{result} reports the eluavation results and Sect.~\ref{discussion} develops discussions. 
 Finally, Sect.~\ref{conclusion} concludes this paper.

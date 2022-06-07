@@ -28,7 +28,7 @@ amplifying the difference by a certain coefficient. The difference (i.e. $\Delta
 and the subtraction will help cancel the noises caused by the varying reference voltages. 
 
 Switched-capacitor operational amplifiers are commonly used in CDS circuits as presented in Fig.~\ref{CDS}. According to the law of charge conservation, 
-the output voltage of the CDS circuits (in PHASE2 of Fig.~\ref{SSWAVE}) can be calculated as \eqref{eq1}. It is noticed that the Input Offset Cancelation (IOS) is realized \cite{razavi_design_1992}, 
+the output voltage of the CDS circuits (in PHASE2 of Fig.~\ref{SSWAVE}) can be calculated as \eqref{eq1}, consistent with the requirements. It is also noticed that the Input Offset Cancelation (IOS) is realized \cite{razavi_design_1992}, 
 which is necessary because the amplifiers in different columns may have different offset voltage.
 
 \begin{figure}[htbp]
@@ -51,7 +51,7 @@ which is necessary because the amplifiers in different columns may have differen
 As presented in Fig.~\ref{RAMP}, the ramp generator in the SS ADCs consists of a thermometer counter and a Capacitor Digital-to-Analog Converter (CDAC). 
 While the capacitors in CDAC are being switched one by one from $V_{refl}$ to $V_{vefh}$, the output voltage of the ramp generator will be as \eqref{eq2} according to the law of charge conservation. 
 In this equation, $N$ means the number of switched capacitors and $M$ means the total number of capacitors of the same size (for the 8-bit precision, the total number will be 255). 
-Therefore, as in PHASE3 of Fig.~\ref{SSWAVE}, the ramp signal will be like stages from $V_{refl}$ to $V_{refh}$, of which the range is consistent with the output of CDS circuits. 
+Therefore, as in PHASE3 of Fig.~\ref{SSWAVE}, the ramp signal will be like stages from $V_{refl}$ to $V_{refh}$, of which the range matches with the output of CDS circuits. 
 And the height of every stage is actually the Least Significant Bit (LSB) converted by the ADCs.
 
 The three buffers in Fig.~\ref{RAMP} make sure that the reference voltages and ramp signal have enough driving capability, 
@@ -73,7 +73,7 @@ and the output buffer will be in the largest size because it has to drive hundre
 The comparators work for comparing the CDS circuits' output and the ramp signal from the ramp generator. 
 In the SS ADCs, two-stage open-loop comparators can be applied as presented in Fig.~\ref{COM}. Again according to the law of charge conservation, 
 the comparators’ output (in PHASE3 of Fig.~\ref{SSWAVE}) can be calculated as \eqref{eq3}. The comparison will be dominated by $V_{ramp}-V_{cds}$ as long as the amplifiers’ open-loop gain 
-is large enough and the IOS is realized. Besides, the comparators’ speed depends on the amplifiers’ bandwidth and slew rate.
+is large enough while the IOS is also realized. In addition, the comparators’ speed relies on the amplifiers’ bandwidth and slew rate.
 
 \begin{figure}[htbp]
 	\centerline{\includegraphics[width=3.5in]{./Figures/COM.eps}}
@@ -94,16 +94,16 @@ is large enough and the IOS is realized. Besides, the comparators’ speed depen
 The overall architecture of the SAR/SS ADCs is almost the same as the SS ADCs as presented in Fig.~\ref{SARADC}, and the only two differences are that the comparators are replaced by low-precision (4bit) SAR sub-ADCs and
 the ramp generator is replaced by a Resistor Digital-to-Analog Converter (RDAC) with a one-hot counter.
 
-As presented in Fig.~\ref{SAR}, a SAR sub-ADC is composed of two input buffers of the reference voltages, an array of capacitors, a comparator and a module of SAR logic. While  generating the upper 4-bit results, $V_{X}$ in the SAR sub-ADCs will be changed according to SAR logic. That means after 4 comparisons 
+As presented in Fig.~\ref{SAR}, a SAR sub-ADC is composed of two input buffers of the reference voltages, an array of digital-to-analog capacitors, a dynamical comparator and a module of SAR logic. While generating the upper 4-bit results, $V_{X}$ in the SAR sub-ADCs will be changed according to the SAR logic. That means after 4 comparisons 
 with the reference voltage, $V_{X}$ will be as \eqref{eq4}, where $D_{U}\left[\,i\,\right]$ is the $i$ th bit of the upper 4 bits. 
 And then the ramp generator will start working, making $V_{X}$ increase gradually as \eqref{eq5}, where $D_{L}\left[\,i\,\right]$ is the $i$ th bit of the lower 6 bits. 
 At the time when $V_{X.2}$ exceeds $V_{ref}$, the corresponding $V_{cds}$ will be as \eqref{eq6}, which can be represented by the 10-bit conversion results, exactly.
 
-It is worth noting that we assign 14 steps for the 4 comparisons with SAR logic. Both of the first and second comparison takes 4 steps and the following two comparison takes 3 steps. It is because that the more rapidly $V_{X}$ can be changed, the more time of comparison may need to take. As for the last comparison with SS logic, taking 1 step is enouph because $V_{X}$ will exceed $V_{ref}$ gradually allowing the comparators' in-time response.
+It is worth noting that we assign 14 steps for the 4 comparisons with SAR logic. Both of the first and second comparison takes 4 steps and the following two comparison takes 3 steps. It is because that the more rapidly $V_{X}$ can be changed, the more time may required for comparison. As for the last comparison with SS logic, 1 step is enouph because $V_{X}$ will exceed $V_{ref}$ gradually, allowing the comparators to response in-time.
 
 Fig.~\ref{RRAMP} shows the structure of the ramp generator in the SAR/SS ADCs, which consists of an R-string made up of 68 unit resistors. $V_{ramp}$ has a total number of 68 steps,
 of which 64 steps with a step size of $(V_{refh}-V_{refl})/64$ are used to generate the lower 6-bit results and 4 redundant steps are used to make sure that the comparators 
-will always be flipped for lacthcing the results. In the working time, $V_{0}$ to $V_{67}$ in the ramp generator is sequentially selected as the input of the output buffer and thereby 
+will always be flipped to latch the results. In the working time, $V_{0}$ to $V_{67}$ in the ramp generator is sequentially selected as the input of the output buffer and thereby 
 $V_{ramp}$ is changed from $V_{vefl}$ to $V_{vefl}+17/16(V_{refh}-V_{refl})$.
 
 Compared to CDAC, RDAC is able to generate the ramp signal without the gain error caused by the input capacitors of the output buffer, 
@@ -157,7 +157,7 @@ with the SAR logic and the lower 6-bit results (as the last item of \eqref{eq6})
 	\label{SARWAVE}
 \end{figure} 
 
-As for the comparators inside the SAR sub-ADCs, traditional structure of a strong-arm comparator with pre-amplifiers is adopted as presented in Fig.~\ref{LATCH}. Such comparators 
+As for the dynamical comparators inside the SAR sub-ADCs, traditional structure of a strong-arm comparator with pre-amplifiers is adopted as presented in Fig.~\ref{LATCH}. Such comparators 
 are suitable for multiple comparisons because high speed is easy to achieve. Besides, the pre-amps’ offset voltages can be canceled effectively through the Output Offset Cancelation (OOS) \cite{razavi_design_1992}.
 
 \begin{figure}[htbp]
@@ -166,5 +166,4 @@ are suitable for multiple comparisons because high speed is easy to achieve. Bes
 	\label{LATCH}
 \end{figure} 
 
-The total steps for conversion in the SAR/SS ADCs are 82 ($14+68$), which is much less than 1024 steps (for 10-bit) with the SS architecture. 
-However, the SAR/SS ADCs have traded off area for less conversion steps. Therefore, for different design specifications, different arcitecture can be chosen.
+The reasons why we choose 4/8-bit adaptive-precision for the SS ADCs and 4/10-bit adaptive-precision for the SAR/SS ADCs are discussed in Sect.~\ref{discussion}.
