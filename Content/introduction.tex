@@ -1,14 +1,14 @@
 \section{Introduction}
 
-With the development of the Internet-of-Things (IoT), edge devices like mobile phones, smart watches, and other portable products have been playing an important role in people’s daily lives 
-for collecting and processing data in site and in time. On the other hand, deep-learning algorithms have shown broad prospects for sensing applications, such as computer vision, speech recognition, 
-and robotics. Therefore, it has been an emerging trend to implement deep-learning empowered edge intelligence, which leads to many efforts of research. 
+With the development of the Internet-of-Things (IoT), edge devices such as mobile phones, smart watches, and other portable products have been playing an important role in people’s daily lives 
+for collecting and processing data on-site and in-time. On the other hand, deep-learning algorithms have shown broad prospects for sensing applications, such as computer vision, speech recognition, 
+and robotics. Therefore, implementing deep-learning empowered edge intelligence has become an emerging trend.
 
 To integrate large and computationally intensive deep-learning models on edge devices of which the power supply and computing resources are quite limited, the primary design constraint will be the energy efficiency.
 
-While more and more deep-learning algorithms have harnessed the redundancy of sensory data and improved the energy efficiency through precision-adaptive computing \cite{leibe_xnor-net_2016}\cite{li_ternary_2016}\cite{park_energy-efficient_2018}, 
+While more and more deep-learning algorithms have harnessed the redundancy of sensory data to improve the energy efficiency through precision-adaptive computing \cite{leibe_xnor-net_2016}\cite{li_ternary_2016}\cite{park_energy-efficient_2018}, 
 Analog-to-Digital Converters, which dominate the power consumption of 
-traditional sensing systems, are still generally equipped with fixed precision capabilities. Therefore, opportunities have been offered to take adaptive-precision adjustments inside the ADCs for further lowering the energy barrier of edge sensing and computation. 
+traditional sensing systems, are still generally equipped with fixed precision capabilities. Therefore, opportunities have been offered for adaptive-precision tuning within the ADCs to further lower the energy barrier of edge sensing and computation. 
 %and implementation with CIM architecture \cite{chiu_4-kb_2020}\cite{karunaratne_-memory_2020}\cite{jung_crossbar_2022} have been extensively studied, 
 %can also be precision-adaptively designed for more intelligent edge computing.
 %can also be smartly designed for more intelligent edge computing. 
@@ -17,22 +17,22 @@ traditional sensing systems, are still generally equipped with fixed precision c
 %the systems' energy efficiency by taking algorithm-aware adjustments inside the ADCs. Considering the precision (i.e. the quantization bits) is at the heart of an ADC’s energy constraints, 
 %making it dynamically adaptive will be promising.
 
-Motivated by these facts, we mainly makes the following contributions in this paper:
+Motivated by these facts, we mainly make the following contributions in this paper:
 
 \begin{enumerate}[\IEEEsetlabelwidth{3)}]
 	\item 
 	An adaptive-precision ADC architecture is proposed to enable energy-efficient adaptive data sensing and computing for edge devices. The proposed design leverages a fine-grained power gating strategy to enable efficient and implementation-friendly run-time precision adaptation.
 	Experimental results demonstrate that the proposed method can reduce ADC power consumption by approximately 50\% with only a few required control circuits.
 	\item 
-	The proposed method has been applied to widely used column-parallel ADCs, with two ADC design studies targeting data-intensive CMOS image processing.
+	The proposed method has been applied to widely used column-parallel ADCs targeting data-intensive CMOS image processing\cite{kim_11-bit_2021,nie_single_2020,kumagai_14-inch_2018,park_640_2020}, with two case study ADC designs.
 	
-	The first design is column-parallel Single-Slope (SS) ADCs \cite{snoeij_18v_2005}\cite{kleinfelder_10000_2001} and the second is column-parallel Successive Approximation Register (SAR)/SS ADCs \cite{kim_area-efficient_2016}.
-	Both of the two designs are completely built with not only main functional modules but also peripheral circuits including bandgap circuits, bias circuits and necessary buffers. And the ADCs' energy distribution across different modules is specifically analysed. 
+	The first design is column-parallel Single-Slope (SS) ADCs \cite{snoeij_18v_2005,kleinfelder_10000_2001} and the second is column-parallel Successive Approximation Register (SAR)/SS ADCs \cite{kim_area-efficient_2016}.
+	Both of the two architectures are completely built with not only main functional modules but also peripheral circuits including bandgap circuits, bias circuits and necessary buffers. And the ADCs' energy distribution across different modules is analysed  in detail. 
 	%Two case study ADC designs applied in the CISs are presented with different design specifications.
     %according to which a method combining adaptive precision and fine-grained power gating strategies is proposed
     %for more smart data conversion.   
 	\item 
-	Although with different design specificaitons, the proposed method is successfully applied to the two ADC architectures with the same principles, which shows universalty. Besides, the strengths and weaknesses of applying the two diffenrent ADC architectures are discussed in detail.
+	Although with different design specificaitons, the proposed method is successfully applied to the two ADC architectures with the same principles, which shows universalty. Besides, the strengths and weaknesses of the two diffenrent architectures are specifically discussed.
 \end{enumerate} 
 
 The remainder of this paper is organized as follows. 

@@ -1,19 +1,19 @@
 \section{Evaluation Results}\label{result}
 
-This section provides quantitative results of the two case study ADC designs’ fundamental characteristics and energy-saving performance. 
+This section provides quantitative results on the fundamental characteristics and energy-saving performance of the two case study ADC designs. 
 The statistical data is obtained from simulation in Virtuoso’s AMS Environment. 
-Although some digital modules are in behavior level written by Verilog, we argue that the power consumption of this parts can be ignored 
-because these digital modules are just in need of limited dynamical currents.
+Although some digital modules are behavioral level written in Verilog, we consider the power dissipation of these parts to be negligible 
+since these digital modules are just in need of limited dynamical currents.
 
 \subsection{Evaluation of the SS ADCs}
 
 The fundamental characteristics of the SS ADCs are summarized in Table~\ref{tab1}. Assuming a 512×512 pixel array, the frame rate will be 162fps.
 The SNDR of SS ADCs is 23.83/46.64 dB, which means the ENOB is 3.67/7.46 bits. 
-The power consumption of the SS ADCs is measured and divided by columns, 
-it shows that compared to 76.2uW/column for high-precison conversion, only 40.8uW/column is needed for low-precison conversion, reduced by almost a half. 
+The power consumption of the SS ADCs is measured and divided by column, 
+it shows that compared to 76.2uW/column for high-precison conversion, only 40.8uW/column is needed for low-precison conversion, reduced by nearly half. 
 A more specific energy distribution analysis is presented in Fig.~\ref{SSresults1}. 
-As we can see, most parts of the power consumption are taken up by the column-parallel comparators and the output buffer of the ramp generator, 
-both of which can be power gated effectively for low-precison conversion. 
+As we can see, most of the power consumption is taken up by the column-parallel comparators and the output buffer of the ramp generator, 
+both of which can be effectively power gated for low-precison conversion. 
 The related quantity results is presented in Fig.~\ref{SSresults2}, 
 where the peripheral circuits include a bandgap and voltage divider, some level-shift circuits and global buffers.
 
@@ -69,10 +69,10 @@ where the peripheral circuits include a bandgap and voltage divider, some level-
 \subsection{Evaluation of the SAR/SS ADCs}
 
 The fundamental characteristics of the SAR/SS ADCs are summarized in Table~\ref{tab2}. 
-While the throughput is set similar to the SS ADCs, fewer steps is required in the SAR/SS ADCs, where 1 step counts for 2 clock periods. 
-The SNDR is 24.25/57.87 dB and the ENOB is 3.74/9.32 bits, consistent with the design specifications. 
-The power consumption is 256.1uW/column for high-precison conversion and 137.1uW/column for low-precison conversion, which means the energy of the SAR/SS ADCs can also be saved to nearly half.
-According to the energy distribution analysis presented in Fig.~\ref{SARresults1}, most parts of the SAR/SS ADCs' power consumption are taken up by the column-parallel buffers of reference voltages in the sub-ADCs. And these parts of power consumption can be significantly reduced for low-precision conversion.
+While the throughput is set similar to the SS ADCs, fewer steps is required in the SAR/SS ADCs, where 1 step is equivalent to 2 clock periods. 
+The SNDR is 24.25/57.87 dB and the ENOB is 3.74/9.32 bits, which is in line with the design specifications. 
+The power consumption is 256.1uW/column for high-precison conversion and 137.1uW/column for low-precison conversion. It means the energy of the SAR/SS ADCs can also be saved by nearly half for low-precison conversion.
+According to the energy distribution analysis presented in Fig.~\ref{SARresults1}, most of the SAR/SS ADCs' power consumption is occupied by the column-parallel buffers of reference voltages in the sub-ADCs. And these parts of power consumption can be significantly reduced by power gating.
 The related quantity results is presented in Fig.~\ref{SARresults2}.
 
 \begin{table}[htbp]
