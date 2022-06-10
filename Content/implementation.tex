@@ -1,4 +1,4 @@
-\section{Implementation of Adaptive Precision and Power Gating}\label{strategy}
+\section{Power Gating and Adaptive-Precision Implementation}\label{strategy}
 
 \subsection{Implementation of Power Gating}
 
@@ -26,7 +26,7 @@ As the collumn-parallel ADCs not only have large amounts of column-parallel curr
 	\label{TIME}
 \end{figure}  
 
-\subsection{Implementation for the SS ADCs}
+\subsection{Adaptive-Precision Implementation for the SS ADCs}
 
 As evaluated in Sect.~\ref{result}, the SS ADCs’ power consumption is mainly taken up by the column-parallel comparators, bias circuits, and the output buffer of the ramp generator. 
 Considering that all bias circuits are settled down only once (tens of microseconds after the whole system's power up) and then other circuits can be settled down quickly by the distributed 
@@ -52,7 +52,7 @@ For low-precision conversion, the NMOS switch is turned on by the high-level gat
 	\label{MATE}
 \end{figure} 
 
-\subsection{Implementation for the SAR/SS ADCs}
+\subsection{Adaptive-Precision Implementation for the SAR/SS ADCs}
 
 As evaluated in Sect.~\ref{result}, the SAR/SS ADCs’ power consumption is mainly taken up by the column-parallel buffers of reference voltages in the SAR sub-ADCs.
 It is because that these buffers need to drive relatively large and changing load capacitance, which means relatively large static and dynamical current is required.

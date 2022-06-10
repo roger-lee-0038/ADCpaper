@@ -8,19 +8,19 @@ energy challenge to support and sustain the fast expansion of artificial intelli
 
 It is a known fact that feature-rich content, such as video and voice, has high data redundancy. Leveraging such data redundancy
 can potentially reduce the computation and energy cost. To this end, adaptive-precision computing strategies have recently been 
-proposed to improve the system energy efficiency.  Zhao {\it et al.} proposed a deep reinforcement learning based adaptive-resolution 
-framework for multi-task video analytics~\cite{XXX}. {\it List Rob's work , and other related work.}
+proposed to improve the system energy efficiency. Zhao {\it et al.} proposed a deep reinforcement learning based adaptive-resolution 
+framework for multi-task video analytics~\cite{zhao_reinforcement-learning-based_2022}. Lubana and Dick presented Digital Foveation, an energy-aware machine vision framework processing images in multiple rounds with adaptive-resolution~\cite{lubana_digital_2018}. LiKamWa {\it et al.} dynamically optimized the camera clock frequency for trade off between the sensing quality and energy efficiency~\cite{likamwa_energy_2013}.
 While the recently proposed adaptive-precision computing techniques can effectively reduce the computation cost, Analog-to-digital 
 converters (ADCs), as the the first line of the edge analytics pipeline, are equipped with fixed data precision capabilities, and
 dominate the energy consumption of the data sensing stage of edge computing. For instance, as demonstrated in the previous study, 
-such fixed-precision ADC design may introduce significant energy overhead to data sensing and communication, accounting for XXX\%
-of the total machine vision analytics pipeline~\cite{XXX}.
+such fixed-precision ADC design may introduce significant energy overhead to data sensing and communication, accounting for 50\%-75\% of overall energy in the image sensers~\cite{choi_energyillumination-adaptive_2015,takayanagi_125-inch_2005,kitamura_33-megapixel_2012}, and 34\% 
+of the total machine vision analytics pipeline with backend digital hardware acceleration~\cite{likamwa_redeye_2016}.
 
 This work introduces adaptive-precision ADC architecture design to tackle the energy efficiency challenge of edge intelligence. 
 The proposed design leverages a fine-grained power gating strategy to enable efficient and implementation-friendly run-time precision 
 adaptation. The proposed method has been applied to widely used column-parallel ADCs, with two ADC design studies targeting 
 data-intensive CMOS image processing. Experimental results demonstrate that the proposed method can reduce ADC power consumption 
-by approximately 50% with only a few required control circuits. This work makes the following contributions. 
+by approximately 50\% with only a few required control circuits. This work makes the following contributions. 
 
 %While more and more deep-learning algorithms have harnessed the redundancy of sensory data to improve the energy efficiency through precision-adaptive computing \cite{leibe_xnor-net_2016}\cite{li_ternary_2016}\cite{park_energy-efficient_2018}, 
 
@@ -36,10 +36,10 @@ by approximately 50% with only a few required control circuits. This work makes 
 \begin{enumerate}[\IEEEsetlabelwidth{3)}]
 	\item 
 	An adaptive-precision ADC architecture is proposed to enable energy-efficient adaptive data sensing and computing for edge devices. The proposed design leverages a fine-grained power gating strategy to enable efficient and implementation-friendly run-time precision adaptation.
-
+	Several auxiliary circuits have been carefully inserted to eliminate potential metastability caused by power gating. And the additional control signals are reused as much as possible or even not required, achieving cost-effective power-scaling capability exploitation inherently for the proposed ADC architectures.
 	\item 
-	The proposed method has been applied to widely used column-parallel ADCs targeting data-intensive CMOS image processing\cite{kim_11-bit_2021,nie_single_2020,kumagai_14-inch_2018,park_640_2020} with two case study ADC designs, including 
-	a column-parallel Single-Slope (SS) ADCs \cite{snoeij_18v_2005,kleinfelder_10000_2001} and a column-parallel Successive Approximation Register (SAR)/SS ADCs \cite{kim_area-efficient_2016}. 
+	The proposed method has been applied to widely used column-parallel ADCs targeting data-intensive CMOS image processing~\cite{kim_11-bit_2021,nie_single_2020,kumagai_14-inch_2018,park_640_2020}, with two case study ADC designs, including 
+	a column-parallel Single-Slope (SS) ADCs~\cite{snoeij_18v_2005,kleinfelder_10000_2001} and a column-parallel Successive Approximation Register (SAR)/SS ADCs~\cite{kim_area-efficient_2016}. 
 
 %	Both of the two architectures are completely built with not only main functional modules but also peripheral circuits including bandgap circuits, bias circuits and necessary buffers. And the ADCs' energy distribution across different modules is analysed  in detail. 
 	%Two case study ADC designs applied in the CISs are presented with different design specifications.
