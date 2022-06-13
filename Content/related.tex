@@ -1,20 +1,21 @@
 \section{Related Works}\label{related}
 
-Low-precision deep-learning algorithms have been extensively studied~\cite{leibe_xnor-net_2016,li_ternary_2016,park_energy-efficient_2018} for better energy efficiency. 
-\cite{leibe_xnor-net_2016} introduced Binary Weight Nets (BWN) and XNOR-Nets to achieve
-Deep Neural Networks (DNNs) with binary weights and activations. 
-With some accuracy compensation strategies, BWN and XNOR-Nets are able to perform low-precision computations with only 0.8\% and 11\% accuracy loss, respectively.
-\cite{li_ternary_2016} adopted weights of three values (i.e., -w, 0, w) to further reduce the accuracy loss of computing. Although this requires an additional bit per weight compared to binary weights, the sparsity of the weights can be exploited to save computation and storage resources.
-\cite{park_energy-efficient_2018} presented an outlier-aware accelerator performing dense and low-precision (4-bit) computations on most of the data, while efficiently handling a small number of sparse and high-precision outliers.
-Although these works are about downstream low-precision algorithms and relatively seprated from the ADCs, the adaptive-precision design of ADCs needs to take the accuracy requirements of the algorithms into consideration for the complete pipeline. In this paper, we choose 4-bit conversion for the low-precision mode of the ADCs, with a trade off between the energy-saving capabilities of ADCs and accuracy loss of algorithms.
-
-There have also been related works in the design of adaptive-precision ADCs~\cite{zhu_06_2013,zhu_6--10-bit_2015,el-halwagy_100-mss5-gss_2018}. 
+There have also been some prior work on adaptive-precision ADC design~\cite{zhu_06_2013,zhu_6--10-bit_2015,el-halwagy_100-mss5-gss_2018}. 
 \cite{zhu_06_2013} and \cite{zhu_6--10-bit_2015} focused on a SAR ADC with splittable capacitor array for 8-10-bit or 6-10 bit adaptive-precision. 
 \cite{el-halwagy_100-mss5-gss_2018} presented a time-domain SAR/Flash ADC using voltage-controlled oscillators (VCOs). The ADC can be configured as a double sampling SAR ADC for the high-resolution modes or as a 4× asynchronous time-interleaved Flash ADCs for the high sampling rate modes.
-However, it is difficult to implement VCO-used ADCs in the narrow readout channel pitch of the CMOS Image Sensor (CIS) due to circuit complexity~\cite{kim_area-efficient_2016}, and a SAR ADC also requires a large area to implement a Capacitor Digital-to-Analog Converter (CDAC)~\cite{funatsu_62_2015}.
-On the other hand, column-parallel SS ADCs are widely used for image processing applications due to their small area and high linearity~\cite{kim_11-bit_2021,nie_single_2020,kumagai_14-inch_2018,park_640_2020}, and SAR/SS ADCs have also been studied~\cite{kim_area-efficient_2016,chen_12_2014} for reducing the A/D conversion time of the SS ADC and the area of the SAR ADC.     
-Therefore, in this paper, we focus on achieving adaptive-precision for the SS and SAR/SS ADCs. And thanks to the SS conversion logic, exponential power scaling capability can be obtained through fine-grained power gating strategies, which has hardly been exploited before.
+However, it is a known fact that it is difficult to implement VCO-used ADCs in the narrow readout channel pitch of the CMOS Image Sensor (CIS) due to its high circuit complexity~\cite{kim_area-efficient_2016}. In addition, a SAR ADC also introduces large area overhead to implement the Capacitor Digital-to-Analog Converter (CDAC)~\cite{funatsu_62_2015}.
+Different from the prior work, we consider column-parallel SS ADC, which has been widely used for image processing applications, 
+thanks to its small area and high linearity~\cite{kim_11-bit_2021,nie_single_2020,kumagai_14-inch_2018,park_640_2020}. 
+In addition, SAR/SS ADCs have been studied~\cite{kim_area-efficient_2016,chen_12_2014} for reducing the A/D conversion time of 
+the SS ADC and the area of the SAR ADC.     
+In this work, we focus on enabling adaptive-precision for the SS and SAR/SS ADCs. Thanks to the SS conversion logic, exponential power 
+scaling capability can be achieved through fine-grained power gating strategies, which has hardly been exploited before.
 
-Other works have tried to relieve the design specifications of ADCs by applying low-precision analog computing firstly close to the sensor~\cite{chen_asp_2016,liu_ns-cim_2020}. 
-But high-precision ADCs and DNN processors are still required for complex tasks. Therefore, adaptive-precision tuning whithin ADCs remains competitive for efficient hardware reuse.
- 
+%Other works have tried to relieve the design specifications of ADCs by applying low-precision analog computing firstly close to the sensor~\cite{chen_asp_2016,liu_ns-cim_2020}. But high-precision ADCs and DNN processors are still required for complex tasks. Therefore, adaptive-precision tuning within ADCs remains competitive for efficient hardware reuse.
+
+The proposed work aims to enable energy-efficient edge intelligence.  Adaptive-precision deep learning algorithms have been intensively studied~\cite{leibe_xnor-net_2016,li_ternary_2016,park_energy-efficient_2018} to enable energy-efficient edge intelligence. These prior works often apply a precision lower bound to optimize energy efficiency while ensuring the necessary accuracy.  The proposed adaptive-precision ADC design needs to account for this accuracy requirement to enable a complete adaptive-precision data analytics pipeline.  In this work, taking such constraint into consideration, we choose 4-bit conversion as the low-precision mode of the ADC, which achieves a good compromise between energy efficiency and algorithm accuracy. 
+
+%Although these works are about downstream low-precision algorithms and relatively separated from the ADCs, the adaptive-precision design of ADCs needs to take the accuracy requirements of the algorithms into consideration for the complete pipeline. In this paper, we choose 4-bit conversion for the low-precision mode of the ADCs, with a trade off between the energy-saving capabilities of ADCs and accuracy loss of algorithms.
+
+%\cite{leibe_xnor-net_2016} introduced Binary Weight Nets (BWN) and XNOR-Nets to enable Deep Neural Networks (DNNs) with binary weights and activations.  With some accuracy compensation strategies, BWN and XNOR-Nets are able to perform low-precision computations with only 0.8\% and 11\% accuracy loss, respectively.  \cite{li_ternary_2016} adopted weights of three values (i.e., -w, 0, w) to further reduce the accuracy loss of computing. Although this requires an additional bit per weight compared to binary weights, the sparsity of the weights can be exploited to save computation and storage resources.  \cite{park_energy-efficient_2018} presented an outlier-aware accelerator performing dense and low-precision (4-bit) computations on most of the data, while efficiently handling a small number of sparse and high-precision outliers.  
+
