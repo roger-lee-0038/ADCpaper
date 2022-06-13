@@ -1,24 +1,29 @@
 \section{Introduction}
 
 Battery powered Internet-of-Things (IoT) devices, such as wearables, have been playing an important role in people's daily lives.
-In recent years, the adoption of deep learning algorithms on IoT devices are becoming increasingly prevalent to empower edge
-intelligence, such as machine vision, speech recognition, and robotics applications. Content-rich deep models are data and energy 
-intensive, limiting their applications in energy-constrained, battery-operated IoT devices. There is an urgent need to tackle the 
-energy challenge to support and sustain the fast expansion of artificial intelligence of things.
+In recent years, the adoption of deep learning algorithms on IoT devices are becoming increasingly prevalent to enable edge
+intelligence, such as machine vision, speech recognition, and robotics applications. However, content-rich deep models are data 
+and energy intensive, limiting their applications in energy-constrained, battery-operated IoT devices. There is an urgent need to 
+tackle the energy challenge to support and sustain the fast expansion of artificial intelligence of things.
 
 It is a known fact that feature-rich content, such as video and voice, has high data redundancy. Leveraging such data redundancy
-can potentially reduce the computation and energy cost. To this end, adaptive-precision computing strategies have recently been 
-proposed to improve the system energy efficiency. Zhao {\it et al.} proposed a deep reinforcement learning based adaptive-resolution 
-framework for multi-task video analytics~\cite{zhao_reinforcement-learning-based_2022}. Lubana and Dick presented Digital Foveation, an energy-aware machine vision framework processing images in multiple rounds with adaptive-resolution~\cite{lubana_digital_2018}. LiKamWa {\it et al.} dynamically optimized the camera clock frequency for trade off between the sensing quality and energy efficiency~\cite{likamwa_energy_2013}.
-While the recently proposed adaptive-precision computing techniques can effectively reduce the computation cost, Analog-to-digital 
-converters (ADCs), as the the first line of the edge analytics pipeline, are equipped with fixed data precision capabilities, and
-dominate the energy consumption of the data sensing stage of edge computing. For instance, as demonstrated in the previous study, 
-such fixed-precision ADC design may introduce significant energy overhead to data sensing and communication, accounting for 50\%-75\% of overall energy in the image sensers~\cite{choi_energyillumination-adaptive_2015,takayanagi_125-inch_2005,kitamura_33-megapixel_2012}, and 34\% 
-of the total machine vision analytics pipeline with backend digital hardware acceleration~\cite{likamwa_redeye_2016}.
+can potentially reduce the computation and energy cost~\cite{lubana_digital_2018, zhao_reinforcement-learning-based_2022}. 
+To this end, adaptive-precision computing strategies have recently been proposed to improve the system energy efficiency. 
+Lubana and Dick presented Digital Foveation, an energy-aware machine vision framework supporting energy-efficient adaptive-resolution image processing-resolution~\cite{lubana_digital_2018}. 
+Zhao {\it et al.} proposed a deep reinforcement learning based adaptive-resolution framework for multi-task video analytics~\cite{zhao_reinforcement-learning-based_2022}. 
+LiKamWa {\it et al.} proposed a dynamic frequency method to optimize the camera energy efficiency under sensing quality constraints~\cite{likamwa_energy_2013}. These works have demonstrated the potential to effectively minimize the computing cost for edge intelligence. 
+Unfortunately, computation is only part of the story. Analog-to-digital converters (ADCs), as the the first line of the edge 
+analytics pipeline, are equipped with fixed-precision conversion capabilities, introducing serious side effects on system energy 
+efficiency.  As demonstrated in previous study, such fixed-precision ADC design may introduce significant energy overhead to 
+data sensing and communication, which may account for 50\%-75\% of the overall energy in the image 
+sensors~\cite{choi_energyillumination-adaptive_2015,takayanagi_125-inch_2005,kitamura_33-megapixel_2012}. Furthermore, as shown in 
+prior work, fix-precision ADC also introduces extra computation overhead~\cite{likamwa_redeye_2016, lubana_digital_2018}. 
 
-This work introduces adaptive-precision ADC architecture design to tackle the energy efficiency challenge of edge intelligence. 
-The proposed design leverages a fine-grained power gating strategy to enable efficient and implementation-friendly run-time precision 
-adaptation. The proposed method has been applied to widely used column-parallel ADCs, with two ADC design studies targeting 
+% and 34\% of the total machine vision analytics pipeline with backend digital hardware acceleration~\cite{likamwa_redeye_2016}.
+
+This work presents an adaptive-precision ADC architecture design to tackle the energy efficiency challenge of edge intelligence. 
+The proposed ADC design leverages a fine-grained power gating strategy to enable efficient and implementation-friendly run-time 
+precision adaptation. The proposed method has been applied to widely used column-parallel ADCs, with two ADC design studies targeting 
 data-intensive CMOS image processing. Experimental results demonstrate that the proposed method can reduce ADC power consumption 
 by approximately 50\% with only a few required control circuits. This work makes the following contributions. 
 
@@ -34,14 +39,18 @@ by approximately 50\% with only a few required control circuits. This work makes
 %making it dynamically adaptive will be promising.
 
 \begin{enumerate}[\IEEEsetlabelwidth{3)}]
-	\item 
-	An adaptive-precision ADC architecture is proposed to enable energy-efficient adaptive data sensing and computing for edge devices. The proposed design leverages a fine-grained power gating strategy to enable efficient and implementation-friendly run-time precision adaptation.
-	Several auxiliary circuits have been carefully inserted to eliminate potential metastability caused by power gating. And the additional control signals are reused as much as possible or even not required, achieving cost-effective power-scaling capability exploitation inherently for the proposed ADC architectures.
-	\item 
-	The proposed method has been applied to widely used column-parallel ADCs targeting data-intensive CMOS image processing~\cite{kim_11-bit_2021,nie_single_2020,kumagai_14-inch_2018,park_640_2020}, with two case study ADC designs, including 
-	a column-parallel Single-Slope (SS) ADCs~\cite{snoeij_18v_2005,kleinfelder_10000_2001} and a column-parallel Successive Approximation Register (SAR)/SS ADCs~\cite{kim_area-efficient_2016}. 
+\item 
+An adaptive-precision ADC architecture is proposed to enable energy-efficient adaptive data sensing and computing for edge devices. 
+The proposed design is equipped with a fine-grain power gating strategy to enable efficient and implementation-friendly run-time precision adaptation.
+Circuit optimization techniques are introduced to eliminate potential metastability caused by power gating. 
+Additional control signals are carefully reused and effectively minimized, enabling cost-effective and implementation-friendly power-scaling 
+capabilities.  
+\item 
+The proposed adaptive-precision method has been applied to widely used column-parallel ADCs, targeting data-intensive CMOS image 
+processing~\cite{kim_11-bit_2021,nie_single_2020,kumagai_14-inch_2018,park_640_2020}. Overall, we demonstrate with two ADC designs, including 
+a column-parallel Single-Slope (SS) ADCs~\cite{snoeij_18v_2005,kleinfelder_10000_2001} and a column-parallel Successive Approximation Register (SAR)/SS ADCs~\cite{kim_area-efficient_2016}. 
 
-%	Both of the two architectures are completely built with not only main functional modules but also peripheral circuits including bandgap circuits, bias circuits and necessary buffers. And the ADCs' energy distribution across different modules is analysed  in detail. 
+%	Both of the two architectures are completely built with not only main functional modules but also peripheral circuits including bandgap circuits, bias circuits and necessary buffers. And the ADCs' energy distribution across different modules is analyzed  in detail. 
 	%Two case study ADC designs applied in the CISs are presented with different design specifications.
     %according to which a method combining adaptive precision and fine-grained power gating strategies is proposed
     %for more smart data conversion.   
@@ -49,12 +58,12 @@ by approximately 50\% with only a few required control circuits. This work makes
 	\item 
 	Experimental results demonstrate that the proposed method can effectively reduce ADC power consumption by approximately 50\% with only a few required control circuits.
 
-	%Although with different design specificaitons, the proposed method is successfully applied to the two ADC architectures with the same principles, which shows universalty. Besides, the strengths and weaknesses of the two diffenrent architectures are specifically discussed.
+	%Although with different design specifications, the proposed method is successfully applied to the two ADC architectures with the same principles, which shows universally. Besides, the strengths and weaknesses of the two different architectures are specifically discussed.
 \end{enumerate} 
 
 The remainder of this paper is organized as follows. 
 Sect.~\ref{related} presents some related works.
 Sect.~\ref{architecture} shows the architecture overview of the two case study ADC designs. 
 Sect.~\ref{strategy} describes the implementation of the proposed method for the two case study ADC designs. 
-Sect.~\ref{result} reports the eluavation results and Sect.~\ref{discussion} develops discussions. 
+Sect.~\ref{result} reports the evaluation results and Sect.~\ref{discussion} develops discussions. 
 Finally, Sect.~\ref{conclusion} concludes this paper.
