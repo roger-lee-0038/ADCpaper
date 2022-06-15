@@ -1,9 +1,12 @@
 \section{Evaluation Results}\label{result}
 
 This section provides quantitative results on the fundamental characteristics and energy-saving performance of the two case study ADC designs. 
-The statistical data is obtained from simulation in Virtuoso’s AMS Environment. 
-Although some digital modules are behavioral level written in Verilog, we consider the power dissipation of these parts to be negligible 
-since these digital modules are just in need of limited dynamical currents.
+The ADCs are designed with TSMC 65nm process and simulated in Virtuoso’s AMS Environment. 
+The power consumption is analysed according to the average transient current of different ADC modules, with one complete sampling and conversion period.
+The input testing signals for low-precision conversion are the same as that for high-precision conversion and thereby given the ADC architecture, the power-saving performance is calculated fairly between the two modes of different precision.
+
+Although some digital modules are behavioral-level written in Verilog, we consider the power dissipation of these parts to be negligible 
+since these digital modules are just in need of limited dynamical current.
 
 \subsection{Evaluation of the SS ADCs}
 
