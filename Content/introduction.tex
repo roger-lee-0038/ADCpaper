@@ -1,28 +1,28 @@
 \section{Introduction}
 
-Battery powered Internet-of-Things (IoT) devices, such as wearables, have been playing an important role in people's daily lives.
+Battery-powered Internet-of-Things (IoT) devices, such as wearables, are playing an important role in people's daily lives.
 In recent years, the adoption of deep learning algorithms on IoT devices are becoming increasingly prevalent to enable edge
 intelligence, such as machine vision, speech recognition, and robotics applications. However, content-rich deep models are data 
-and energy intensive, limiting their applications in energy-constrained, battery-operated IoT devices. There is an urgent need to 
-tackle the energy challenge to support and sustain the fast expansion of artificial intelligence of things.
+and energy intensive, limiting their application in energy-constrained, battery-operated IoT devices. There is an urgent need to 
+tackle energy challenges to support and sustain the rapid expansion of artificial intelligence of things (AIoTs).
 
-It is a known fact that feature-rich content, such as video and voice, has high data redundancy. Leveraging such data redundancy
-can potentially reduce the computation and energy cost~\cite{lubana_digital_2018, zhao_reinforcement-learning-based_2022}. 
-To this end, adaptive-precision computing strategies have recently been proposed to improve the system energy efficiency. 
-Lubana and Dick presented Digital Foveation, an energy-aware machine vision framework supporting energy-efficient adaptive-resolution image processing-resolution~\cite{lubana_digital_2018}. 
+It is a known fact that feature-rich content, such as video and voice, has high data redundancy. Exploiting such data redundancy
+can potentially reduce computation and energy cost~\cite{lubana_digital_2018, zhao_reinforcement-learning-based_2022}. 
+To this end, adaptive-precision computing strategies have recently been proposed to improve system energy efficiency. 
+Lubana and Dick presented Digital Foveation, an energy-aware machine vision framework that supports energy-efficient adaptive-resolution image processing~\cite{lubana_digital_2018}. 
 Zhao {\it et al.} proposed a deep reinforcement learning based adaptive-resolution framework for multi-task video analytics~\cite{zhao_reinforcement-learning-based_2022}. 
-LiKamWa {\it et al.} proposed a dynamic frequency method to optimize the camera energy efficiency under sensing quality constraints~\cite{likamwa_energy_2013}. These works have demonstrated the potential to effectively minimize the computing cost for edge intelligence. 
+LiKamWa {\it et al.} proposed a dynamic frequency method to optimize the camera energy efficiency given sensing quality constraints~\cite{likamwa_energy_2013}. These works demonstrate the potential to effectively minimize the computing cost of edge intelligence. 
 Unfortunately, computation is only part of the story. Analog-to-digital converters (ADCs), as the the first line of the edge 
 analytics pipeline, are equipped with fixed-precision conversion capabilities, introducing serious side effects on system energy 
-efficiency.  As demonstrated in previous study, such fixed-precision ADC design may introduce significant energy overhead to 
-data sensing and communication, which may account for 50\%-75\% of the overall energy in the image 
-sensors~\cite{choi_energyillumination-adaptive_2015,takayanagi_125-inch_2005,kitamura_33-megapixel_2012}. Furthermore, as shown in 
-prior work, fix-precision ADC also introduces extra computation overhead~\cite{likamwa_redeye_2016, lubana_digital_2018}. 
+efficiency.  As demonstrated in previous studies, such fixed-precision ADC design may impose significant energy overhead for
+data sensing and communication, which may account for 50\%-75\% of the overall energy consumption of 
+image sensors~\cite{choi_energyillumination-adaptive_2015,takayanagi_125-inch_2005,kitamura_33-megapixel_2012}. Furthermore, as shown in 
+prior work, fix-precision ADCs also introduce extra computation overhead~\cite{likamwa_redeye_2016, lubana_digital_2018}. 
 
 % and 34\% of the total machine vision analytics pipeline with backend digital hardware acceleration~\cite{likamwa_redeye_2016}.
 
 This work presents an adaptive-precision ADC architecture design to tackle the energy efficiency challenge of edge intelligence. 
-The proposed ADC design leverages a fine-grained power gating strategy to enable efficient and implementation-friendly run-time 
+The proposed ADC design utilizes a fine-grain power gating strategy to enable efficient and easy-to-implement run-time 
 precision adaptation. The proposed method has been applied to widely used column-parallel ADCs, with two ADC design studies targeting 
 data-intensive CMOS image processing. Experimental results demonstrate that the proposed method can reduce ADC power consumption 
 by approximately 50\% with only a few required control circuits. This work makes the following contributions. 
@@ -40,8 +40,8 @@ by approximately 50\% with only a few required control circuits. This work makes
 
 \begin{enumerate}[\IEEEsetlabelwidth{3)}]
 \item 
-An adaptive-precision ADC architecture is proposed to enable energy-efficient adaptive data sensing and computing for edge devices. 
-The proposed design is equipped with a fine-grain power gating strategy to enable efficient and implementation-friendly run-time precision adaptation.
+An adaptive-precision ADC architecture is proposed to enable energy-efficient adaptive data analysis pipeline for edge devices. 
+The proposed design is equipped with a fine-grain power gating strategy to enable efficient and easy-to-implement run-time precision adaptation.
 Circuit optimization techniques are introduced to eliminate potential metastability caused by power gating. 
 Additional control signals are carefully reused and effectively minimized, enabling cost-effective and implementation-friendly power-scaling 
 capabilities.  
@@ -62,8 +62,8 @@ a column-parallel Single-Slope (SS) ADCs~\cite{snoeij_18v_2005,kleinfelder_10000
 \end{enumerate} 
 
 The remainder of this paper is organized as follows. 
-Sect.~\ref{related} presents some related works.
-Sect.~\ref{architecture} shows the architecture overview of the two case study ADC designs. 
-Sect.~\ref{strategy} describes the implementation of the proposed method for the two case study ADC designs. 
-Sect.~\ref{result} reports the evaluation results and Sect.~\ref{discussion} develops discussions. 
+Sect.~\ref{related} presents related works.
+Sect.~\ref{architecture} presents the ADC architecture overview. 
+Sect.~\ref{strategy} describes the implementation of the proposed method for the two ADC designs. 
+Sect.~\ref{result} reports the evaluation results and Sect.~\ref{discussion} conduct further discussions. 
 Finally, Sect.~\ref{conclusion} concludes this paper.
