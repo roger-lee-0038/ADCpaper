@@ -1,27 +1,29 @@
 \section{Evaluation Results}\label{result}
 
-This section provides quantitative results on the fundamental characteristics and energy-saving performance of the two case study ADC designs. 
-The ADCs are designed with TSMC 65nm process and simulated in Virtuoso’s AMS Environment. 
-The power consumption is analysed according to the average transient current of different ADC modules, with one complete sampling and conversion period.
-The input testing signals for low-precision conversion are the same as that for high-precision conversion and thereby given the ADC architecture, the power-saving performance is calculated fairly between the two modes of different precision.
+This section presents quantitative evaluation results of the proposed adaptive-precision ADC 
+designs, including a column-parallel Single-Slope (SS) ADC and a column-parallel successive 
+approximation register (SAR)/SS ADC. Both ADC designs are implemented using TSMC 65nm processing,
+and simulated in Virtuoso’s AMS Environment. Circuit power consumption is collectively estimated
+based on the average transient current of different ADC modules given one complete sampling and 
+conversion period. Power savings are then estimated by comparing the power consumption of the
+low-precision conversion mode against that of the high-precision conversion mode. 
 
-Although some digital modules are behavioral-level written in Verilog, we consider the power dissipation of these parts to be negligible 
-since these digital modules are just in need of limited dynamical current.
-
-\subsection{Evaluation of the SS ADCs}
-
-The fundamental characteristics of the SS ADCs are summarized in Table~\ref{tab1}. Assuming a 512×512 pixel array, the frame rate will be 162fps.
-The SNDR of SS ADCs is 23.83/46.64 dB, which means the ENOB is 3.67/7.46 bits. 
-The power consumption of the SS ADCs is measured and divided by column, 
-it shows that compared to 76.2uW/column for high-precison conversion, only 40.8uW/column is needed for low-precison conversion, reduced by nearly half. 
-A more specific energy distribution analysis is presented in Fig.~\ref{SSresults1}. 
-As we can see, most of the power consumption is taken up by the column-parallel comparators and the output buffer of the ramp generator, 
-both of which can be effectively power gated for low-precison conversion. 
-The related quantity results is presented in Fig.~\ref{SSresults2}, 
-where the peripheral circuits include a bandgap and voltage divider, some level-shift circuits and global buffers.
+\subsection{Evaluation of the SS ADC design}
+Table~\ref{tab1} summarizes the key design characteristics of the SS ADC design. Considering a 
+$512\times512$ pixel array, the frame rate is 162fps.  The SNDR of the SS ADC is 23.83/46.64 dB, 
+which means the ENOB is 3.67/7.46 bits.  The power consumption of the SS ADC is measured and 
+divided by column. It shows that the power consumption of the low-precision conversion mode is 
+40.8uW/column, and the power consumption of the high-precision conversion mode is 76.2uW/column. 
+Compared to the high-precision conversion mode, the low-precision conversion mode can reduce 
+the power consumption approximately 50\%. Detailed power breakdown is shown in Fig.~\ref{SSresults1},
+which demonstrates that the power consumption of the SS ADC design is mainly contributed by 
+the  column-parallel comparators and the output buffer of the ramp generator, both of which 
+can be effectively regulated via power gating for low-power conversion. The power consumption
+results are also presented in Fig.~\ref{SSresults2}. The peripheral circuits include a bandgap 
+and voltage divider, level-shift circuits and global buffers.
 
 \begin{table}[htbp]
-	\caption{Performance of the SS ADCs}
+	\caption{Performance of the SS ADC design}
 	\begin{center}
 		\begin{tabular}{|c|c|}
 			\hline
@@ -59,27 +61,29 @@ where the peripheral circuits include a bandgap and voltage divider, some level-
 
 \begin{figure}[htbp]
 	\centerline{\includegraphics[width=3.5in]{./Figures/SSResults1.eps}}
-	\caption{Power Distribution of the SS ADCs.}
+	\caption{Power Distribution of the SS ADC design.}
 	\label{SSresults1}
 \end{figure}
 
 \begin{figure}[htbp]
 	\centerline{\includegraphics[width=3.5in]{./Figures/SSResults2.eps}}
-	\caption{Power Saving Results of the SS ADCs.}
+	\caption{Power Saving Results of the SS ADC design.}
 	\label{SSresults2}
 \end{figure} 
 
-\subsection{Evaluation of the SAR/SS ADCs}
+\subsection{Evaluation of the SAR/SS ADC design}
 
-The fundamental characteristics of the SAR/SS ADCs are summarized in Table~\ref{tab2}. 
-While the throughput is set similar to the SS ADCs, fewer steps is required in the SAR/SS ADCs, where 1 step is equivalent to 2 clock periods. 
-The SNDR is 24.25/57.87 dB and the ENOB is 3.74/9.32 bits, which is in line with the design specifications. 
-The power consumption is 256.1uW/column for high-precison conversion and 137.1uW/column for low-precison conversion. It means the energy of the SAR/SS ADCs can also be saved by nearly half for low-precison conversion.
-According to the energy distribution analysis presented in Fig.~\ref{SARresults1}, most of the SAR/SS ADCs' power consumption is occupied by the column-parallel buffers of reference voltages in the sub-ADCs. And these parts of power consumption can be significantly reduced by power gating.
-The related quantity results is presented in Fig.~\ref{SARresults2}.
+Table~\ref{tab2} summarizes the key design characteristics of the SAR/SS ADC design, for which 
+we consider the same setup as that of the SS ADC. Since fewer steps are required in the SAR/SS ADC 
+design, 1 step is equivalent to 2 clock periods. The SNDR is 24.25/57.87 dB and the ENOB is 3.74/9.32 bits, 
+which is inline with the design specifications. The power consumption of the SAR/SS ADC design is 256.1uW/column for the high-precision conversion mode and 137.1uW/column for the low-precision conversion mode. 
+Compared to the high-precision conversion mode, the low-precision conversion mode can reduce the power 
+consumption approximately 50\%. Detailed power breakdown is shown in Fig.~\ref{SARresults1}, which 
+demonstrates that the power consumption of the SAR/SS ADC design is mainly contributed by the column-parallel buffers of the reference voltages in the sub-ADC, and power gating can effectively minimize the power consumption of these 
+power-dominant components. The power consumption results are also presented in Fig.~\ref{SARresults2}.
 
 \begin{table}[htbp]
-	\caption{Performance of the SAR/SS ADCs}
+	\caption{Performance of the SAR/SS ADC design}
 	\begin{center}
 		\begin{tabular}{|c|c|}
 			\hline
@@ -117,12 +121,12 @@ The related quantity results is presented in Fig.~\ref{SARresults2}.
 
 \begin{figure}[htbp]
 	\centerline{\includegraphics[width=3.5in]{./Figures/SARResults1.eps}}
-	\caption{Power Distribution of the SAR/SS ADCs.}
+	\caption{Power Distribution of the SAR/SS ADC design.}
 	\label{SARresults1}
 \end{figure} 
 
 \begin{figure}[htbp]
 	\centerline{\includegraphics[width=3.5in]{./Figures/SARResults2.eps}}
-	\caption{Power Saving Results of the SAR/SS ADCs.}
+	\caption{Power Saving Results of the SAR/SS ADC design.}
 	\label{SARresults2}
 \end{figure} 
