@@ -1,9 +1,12 @@
 \section{Conclusions}\label{conclusion}
 
-In this work, an adaptive-precision ADC architecture to enable energy-efficient adaptive data sensing and computing for edge devices is proposed with implementation-friendly fine-grained power gating strategies.
+This article introduces an adaptive-precision ADC architecture to enable energy-efficient 
+data analysis pipeline for edge computing. Two adaptive-precision ADC designs are implemented, 
+including a column-parallel single-slope (SS) ADC and a column-parallel successive approximation 
+register (SAR)/SS ADC. The proposed method is efficient and easy to implement. Experimental results 
+demonstrate that the proposed adaptive-precision method can improve the ADC power efficiency by 
+approximately 50\%. Future work will consider applying the proposed method to other ADC architectures, 
+as well as system integration with deep-learning computing engine to enable adaptive-precision
+data analysis pipeline for energy efficient edge intelligence. 
 
-According to the evaluation results of two CIS-applied column-parallel ADC designs, almost a half of the ADCs’ power consumption can be reduced for low-precision conversion by power gating, 
-while only a few of extra control circuits is required.
-It is because that in column-parallel ADCs where the SS conversion logic is widely adopted, not only can large amounts of current be under control but also the power gating time can be continously and exponentially scalable. 
-
-As the proposed architecture may resonate with varying downstream deep-learning algorithms for efficient multi-tasks analysis, further works on the co-design of ADCs and algorithms remain to be developed for more intelligent edge computing.
+%According to the evaluation results of two CIS-applied column-parallel ADC designs, almost a half of the ADCs’ power consumption can be reduced for low-precision conversion by power gating, while only a few of extra control circuits is required.  It is because that in column-parallel ADCs where the SS conversion logic is widely adopted, not only can large amounts of current be under control but also the power gating time can be continuously and exponentially scalable.  As the proposed architecture may resonate with varying downstream deep-learning algorithms for efficient multi-tasks analysis, further works on the co-design of ADCs and algorithms remain to be developed for more intelligent edge computing.
