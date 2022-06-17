@@ -1,8 +1,20 @@
 \section{Adaptive-precision ADC Design}\label{architecture}
 
-In this section, the proposed adaptive-precision ADC design is presented. Targeting the image processing applications, we choose to infuse adaptive-precision conversion capability into the SS and SAR/SS ADCs, both of which the basic architecture is introduced firstly and then the adaptive-precision implementation with fine-grain power gating strategies is described in detail. For other ADCs of different architecture, the proposed method can also be adopted.
+In this section, the proposed adaptive-precision ADC design is presented. Targeting the image processing applications, we choose to infuse adaptive-precision conversion capabilities into the SS and SAR/SS ADCs. The basic modules of the two ADC designs is overviewed firstly in \ref{over1} and \ref{over2}. Then, after showing the power gating implementation in \ref{gating1}, the adaptive-precision tuning within the SS and SAR/SS ADCs is specifically described in \ref{gating2} and \ref{gating3}, with the following architectural enhancements:
 
-\subsection{SS ADC Architecture Overview}
+\begin{enumerate}[\IEEEsetlabelwidth{3)}]
+	\item 
+	The thermometer-code counter in the SS ADC has been extended to support two modes for adaptive-precision conversion, which can also provide an exponential long time for power gating.
+	\item
+    Stability-optimizing switches are inserted into the comparators in the SS ADC to avoid unpredictable latch for low-precision conversion results due to comparators' power off. 
+    \item
+    Additional control signals in the SAR/SS ADC are carefully reused and effectively minimized, enabling effective power-scaling capabilities with little control circuit costs but some shared level-shifters and inverters.      
+\end{enumerate} 
+
+
+%For other ADCs of different architecture, the proposed method can also be adopted.
+
+\subsection{SS ADC Architecture Overview}\label{over1}
 
 The overall architecture of the SS ADC is presented in Fig.~\ref{SSADC}. The main modules include column-parallel Correlated Double Sampling (CDS) circuits, comparators, 
 and a column-shared ramp generator. Fig.~\ref{SSWAVE} shows the basic operational waveform of the SS ADC. At the time when the ramp signal exceeds the output of a CDS circuit in a certain column, 
@@ -56,7 +68,7 @@ In this equation, $N$ represents the number of switched capacitors and $M$ repre
 Therefore, as in PHASE3 of Fig.~\ref{SSWAVE}, the ramp signal will be like stages from $V_{refl}$ to $V_{refh}$, of which the range matches the output of CDS circuits. 
 And the height of each stage is actually the Least Significant Bit (LSB) of the ADC conversion.
 
-The three buffers in Fig.~\ref{RAMP} ensure that the reference voltages and ramp signal have sufficient driving capability, 
+The three buffers in Fig.~\ref{RAMP} ensure that the reference voltages and ramp signal have sufficient driving capabilities, 
 and the output buffer will be in the largest size since it has to drive hundreds of column-parallel comparators.
 
 \begin{figure}[htbp]
@@ -91,16 +103,19 @@ is large enough while the IOS is also realized.% In addition, the comparators’
 	\end{aligned}
 \end{equation}
 
-\subsection{SAR/SS ADC Architecture Overview}
+\subsection{SAR/SS ADC Architecture Overview}\label{over2}
 
-Fig.~\ref{SARADC} shows the overall architecture of the SAR/SS ADC, which is almost the same as the SS ADC in Fig.~\ref{SSADC}. The only two differences are that the comparators are replaced by low-precision (4bit) SAR sub-ADC and
+%Fig.~\ref{SARADC} shows 
+The overall architecture of the SAR/SS ADC is almost the same as the SS ADC in Fig.~\ref{SSADC}. The only two differences are that the comparators are replaced by low-precision (4bit) SAR sub-ADC and
 the ramp generator is replaced by a Resistor Digital-to-Analog Converter (RDAC) with a onehot-code counter.
 
+\iffalse
 \begin{figure}[htbp]
   \centerline{\includegraphics[width=3.5in]{./Figures/SARADC.eps}}
   \caption{Overall architecture of the SAR/SS ADC.}
   \label{SARADC}
-  \end{figure} 
+  \end{figure}
+\fi 
 
 As presented in Fig.~\ref{SAR}, a SAR sub-ADC is composed of two input buffers of the reference voltages, an array of digital-to-analog capacitors, a dynamical comparator and a SAR logic block. While generating the upper 4-bit results, $V_{X}$ in the SAR sub-ADC will be changed according to the SAR logic. That means after 4 comparisons 
 with the reference voltage, $V_{X}$ will be as \eqref{eq4}, where $D_{U}\left[\,i\,\right]$ is the $i$ th bit of the upper 4 bits. 
@@ -133,7 +148,7 @@ At the time when $V_{X.2}$ exceeds $V_{ref}$, the corresponding $V_{cds}$ is exp
 	\end{aligned}
 \end{equation}
 
-It is worth noting that we assign 14 steps for the 4 comparisons with SAR logic. Both the first and second comparison takes 4 steps and the following two comparison takes 3 steps. It is because that the more rapidly $V_{X}$ can be changed, the more time it may be required for comparison. As for the last comparison with SS logic, 1 step is sufficient because $V_{X}$ will not exceed $V_{ref}$ rapidly, allowing the comparators to response in-time.
+It is worth noting that we assign 14 steps for the 4 comparisons with SAR logic (in the SAR/SS ADC, we define 1 clock step as 2 clock periods, which is 100ns). Both the first and second comparison takes 4 steps and the following two comparison takes 3 steps. It is because that the more rapidly $V_{X}$ can be changed, the more time it may be required for comparison. As for the last comparison with SS logic, 1 step is sufficient because $V_{X}$ will not exceed $V_{ref}$ rapidly, allowing the comparators to response in-time.
 
 Fig.~\ref{RRAMP} shows the structure of the ramp generator in the SAR/SS ADC, which consists of an R-string made up of 68 unit resistors. $V_{ramp}$ has a total number of 68 steps,
 of which 64 steps with a step size of $(V_{refh}-V_{refl})/64$ are used to generate the lower 6-bit results and 4 redundant steps are used to ensure that the comparators 
@@ -172,13 +187,13 @@ The reasons why we choose 4/8-bit adaptive-precision for the SS ADC and 4/10-bit
 
 %\subsection{Power Gating and Adaptive-Precision Implementation}\label{strategy}
 
-\subsection{Implementation of Power Gating}
+\subsection{Implementation of Power Gating}\label{gating1}
 
 The power gating can be implemented by adding PMOS-transistor switches between the functional blocks and the supply voltage \cite{keating_low_2007} as presented in Fig.~\ref{GATING}. 
 When the switches are turned off, the corresponding blocks’ current paths will be cut off and thereby the energy is saved. 
 
 It is obvious that for analog circuits, the more current is under control, the more effective the power gating can be. However, to avoid unacceptable IR drop, the total size of the switches may be large, 
-and inverters should be inserted between the control signal and the switches’ gates for sufficient driving capability. 
+and inverters should be inserted between the control signal and the switches’ gates for sufficient driving capabilities. 
 
 Besides, the longer time the functional blocks can be power off, the better power scaling capacity can be obtained. And a continuous long time is preferred than separated short time for power gating because the blocks' shut-down and recovery time should also be taken into consideration.
 As presented in Fig.~\ref{TIME}, separated short time for power gating will inevitably waste more
@@ -198,7 +213,7 @@ As the column-parallel ADCs not only have large amounts of column-parallel curre
 	\label{TIME}
 \end{figure}  
 
-\subsection{Adaptive-Precision Implementation for the SS ADC}
+\subsection{Adaptive-Precision Implementation for the SS ADC}\label{gating2}
 
 As evaluated in Sect.~\ref{result}, the SS ADC’ power consumption is mainly taken up by the column-parallel comparators, bias circuits, and the output buffer of the ramp generator. 
 Considering that all bias circuits are settled down only once (tens of microseconds after the whole system's power up) and then other circuits can be settled down quickly by the distributed 
@@ -214,7 +229,7 @@ The related waveform are presented in Fig.~\ref{SS_pg}.
 	\label{SS_pg}
 \end{figure} 
 
-To avoid the decreasing output of comparators causing extra unwanted latch for the low-precision conversion results, an NMOS switch and a PMOS switch are added to the two inverters following the comparator as presented in Fig.~\ref{MATE}. 
+To avoid the decreasing output of comparators causing extra unwanted latch for the low-precision conversion results, an NMOS switch and a PMOS switch are inserted into the two inverters following the comparator as presented in Fig.~\ref{MATE}. 
 For high-precision conversion, the gating signal will be low-level and turn on the PMOS switch, thus the second inverter's output will be the same as the comparator's output, which is either low-level or high-level. 
 For low-precision conversion, the NMOS switch is turned on by the high-level gating signal and the second inverter's input is connected to the ground. Therefore, the output signal of the two inverters will remain high-level, preventing unpredictable latch caused by the comparator's metastable output.
 
@@ -224,7 +239,7 @@ For low-precision conversion, the NMOS switch is turned on by the high-level gat
 	\label{MATE}
 \end{figure} 
 
-\subsection{Adaptive-Precision Implementation for the SAR/SS ADC}
+\subsection{Adaptive-Precision Implementation for the SAR/SS ADC}\label{gating3}
 
 As evaluated in Sect.~\ref{result}, the SAR/SS ADC’ power consumption is mainly taken up by the column-parallel buffers of reference voltages in the SAR sub-ADC.
 It is because that these buffers need to drive relatively large and changing load capacitance, which means relatively large static and dynamical current is required.
