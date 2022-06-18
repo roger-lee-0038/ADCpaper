@@ -142,16 +142,27 @@ Compared to the high-precision conversion mode, the low-precision conversion mod
 
 \subsection{Performance Summary and Comparison}\label{summary}
 
-Table~\ref{tab1} summarizes the key characteristics of the proposed SS and SAR/SS ADC designs.
-And a comparison with previous reported configurable ADCs is also provided. 
-We take the precision-adaptive SAR ADCs into comparison because on the one hand they have similar precision and sampling rate configurations to our design, on the other hand, SAR ADCs are also applicable to column-parallel image processing given a relatively loose area constraint.
+Table~\ref{tab1} summarizes the key characteristics of the proposed SS and SAR/SS ADC designs,
+along with comparison of a previously reported configurable ADC design~\cite{zhu_6--10-bit_2015}. 
+This particular prior work is chosen because it supports adaptive precision and has similar precision 
+and sampling rate configurations to our work. As shown in Table~\ref{tab1}, our proposed work 
+achieves better power-scaling performance than the previous work. We also like to point out that
+the power-scaling results reported by the prior work only consider the core ADC circuit
+and ignore the peripheral circuits. Our results, on the other hand, include the complete 
+design, including the bandgap, voltage divider, bias circuits and reference buffers. Therefore, 
+compared to the previous work, the power-scaling performance advantage of our work should
+be higher than the reported results compared to the prior work. 
 
-It is highlighted that our design achieves better power-scaling performance than previous works. And the presented power-scaling percents of the SAR ADCs can actually be worse because in these works only the power consumption of the core ADC circuit is measured, while we have analysed the power consumption of the whole implementation, including the bandgap, voltage divider, bias circuits and reference buffers. Therefore, with fair considerations of the peripheral fixed parts of energy, the power-scaling performance of our design can definitely be more competitive.
+It is also important to point out that the proposed power-gating method is a general one 
+that can be applied to other state-of-the-art ADC architectures and realize power-efficient 
+adaptive-precision ADC solutions. 
 
-It is noted that the overall power consumption of the proposed implementation is relatively high. However, since our design studies are targeting to exploit the power-scaling capabilities with applying reasonable power gating strategies, rather than shrinking the power consumption as more as possible for the ADCs equipped with fixed-precision, instructive power-saving effectiveness is still demonstrated.
+%It is highlighted that our design achieves better power-scaling performance than previous works. And the presented power-scaling percents of the SAR ADCs can actually be worse because in these works only the power consumption of the core ADC circuit is measured, while we have analyzed the power consumption of the whole implementation, including the bandgap, voltage divider, bias circuits and reference buffers. Therefore, with fair considerations of the peripheral fixed parts of energy, the power-scaling performance of our design can definitely be more competitive.
+
+%It is noted that the overall power consumption of the proposed implementation is relatively high. However, since our design studies are targeting to exploit the power-scaling capabilities with applying reasonable power gating strategies, rather than shrinking the power consumption as more as possible for the ADCs equipped with fixed-precision, instructive power-saving effectiveness is still demonstrated.
 
 \begin{table*}[htbp]
-	\caption{PERFORMANCE AND COMPARISON}
+	\caption{PERFORMANCE SUMMARY AND COMPARISON}
 	\begin{center}
 		\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
 			\hline
@@ -167,7 +178,7 @@ It is noted that the overall power consumption of the proposed implementation is
 			%\hline
 			\textbf{Architecture}& \multicolumn{2}{|c|}{SAR} & \multicolumn{2}{|c|}{SAR} & \multicolumn{2}{|c|}{SS} & \multicolumn{2}{|c|}{SAR/SS}\\
 			\hline
-			\textbf{Precison(bits)} & 8 & 10 & 8 & 10 & 4 & 8 & 4 & 10 \\
+			\textbf{Precision(bits)} & 8 & 10 & 8 & 10 & 4 & 8 & 4 & 10 \\
 			\hline
 			\textbf{Sampling rate(Hz)}& \multicolumn{2}{|c|}{100K} & \multicolumn{2}{|c|}{20K} & \multicolumn{2}{|c|}{83K} & \multicolumn{2}{|c|}{99K} \\
 			\hline
