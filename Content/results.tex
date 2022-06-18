@@ -153,6 +153,8 @@ design, including the bandgap, voltage divider, bias circuits and reference buff
 compared to the previous work, the power-scaling performance advantage of our work should
 be higher than the reported results compared to the prior works. 
 
+Table.~\ref{tab2} shows the power-saving analysis for a data sensing and communicating pipeline with applying the proposed adaptive-precision ADCs. The parametric power consumption model is developed in \cite{lubana_digital_2018}, and we fit the parameters $a$, $b$ of our design into this model based on the evaluation results in \ref{result}. As we can see, the proposed adaptive-precision ADCs are able to reduce the power consumption of both data sensing and communicating by approximately 50\%. Therefore, the proposed power gating method will be promising for improving the energy efficiency of the edge devices.  
+
 It is also important to point out that the proposed power-gating method is a general one 
 that can be applied to other state-of-the-art ADC architectures and realize power-efficient 
 adaptive-precision ADC solutions. 
@@ -192,7 +194,7 @@ adaptive-precision ADC solutions.
 			\hline
 			\textbf{Power consumption}& 0.32$\mu$W & 0.52$\mu$W &  0.116$\mu$W & 0.226$\mu$W & 40.8$\mu$W & 76.2$\mu$W & 137.1$\mu$W & 256.1$\mu$W\\
 			\hline
-			\textbf{Power-scaling performance}& 62\% & 100\% & 56\% & 100\% & \textbf{54}\% & 100\% & \textbf{54}\% & 100\% \\
+			\textbf{Power-scaling percent}& 62\% & 100\% & 56\% & 100\% & \textbf{54}\% & 100\% & \textbf{54}\% & 100\% \\
 			\hline
 			%\fi
 			%\textbf{FOM$^{\mathrm{a}}$}& 103.64/4.05 pJ/step\\
@@ -200,5 +202,58 @@ adaptive-precision ADC solutions.
 			%\multicolumn{2}{l}{$^{\mathrm{a}}\textbf{FOM}=(\textbf{Power}\ast \textbf{Conversion}\ \textbf{time})/2^{\textbf{ENOB}}$ }	    
 		\end{tabular}
 		\label{tab1}
+	\end{center}
+\end{table*}
+
+\begin{table*}[htbp]
+	\caption{POWER-SAVING ANALYSIS FOR A SENSING AND COMMUNICATING PIPELINE \\WITH THE PROPOSED ADAPTIVE-PRECISION ADCS}
+	\begin{center}
+		\scalebox{0.7}{
+		\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+			\hline
+			
+			\multicolumn{3}{|c|}{}& \multicolumn{8}{|c|}{Image Sensor Energy} &\multicolumn{6}{|c|}{MIPI Communication Energy} &\multicolumn{2}{|c|}{Sensing\&Communicating Energy} \\
+			\hhline{|===================|} 			
+			\hline
+			\multicolumn{3}{|c|}{Formulation} & \multicolumn{8}{|c|}{$E_{sensing}=a\frac{R^2}{f}+b\frac{R}{f}+cT_{exp}$} 
+			& \multicolumn{6}{|c|}{$E_{comm}={P_{comm}\left(1+h\right)\frac{pR}{BR}}$} 
+			& \multicolumn{2}{|c|}{$E_{total}=E_{sensing}+E_{comm}$} \\
+			
+			\hline
+			
+			\multicolumn{3}{|c|}{Item} & \makecell[c]{$a$\\(mW/M-pixels)} & \makecell[c]{$b$\\(mW)} & \makecell[c]{$c$\\(mW)} & \makecell[c]{$R$\\(pixels)} & \makecell[c]{$f$\\(MHz)} 
+			& \makecell[c]{$T_{exp}$\\($\mu$s)} & \makecell[c]{$E_{sensing}$\\(mJ)} & percent 
+			& \makecell[c]{$P_{comm}$\\(mW)} & $h$ & \makecell{$p$\\(bits)} & \makecell[c]{$BR$\\(Gb/s)} & \makecell[c]{$E_{comm}$\\(mJ)} & percent
+			& \makecell{$E_{total}$\\(mJ)} & percent \\ 	
+			
+			\hline
+			
+		    \multicolumn{1}{|c|}{\multirow{4}*{Analysis}} & \multicolumn{1}{|c|}{\multirow{2}*{SS}} & \multicolumn{1}{|c|}{4b} & \multicolumn{1}{|c|}{70.6} & \multicolumn{1}{|c|}{2.43} & \multicolumn{1}{|c|}{\multirow{4}*{141.8}} & \multicolumn{1}{|c|}{\multirow{4}*{512$\times$512}} & \multicolumn{1}{|c|}{\multirow{2}*{42.5}} & \multicolumn{1}{|c|}{\multirow{2}*{1.8}} & \multicolumn{1}{|c|}{0.13} & \multicolumn{1}{|c|}{\multirow{2}*{\textbf{0.55}}} &
+		    \multicolumn{1}{|c|}{\multirow{4}*{40.7}} &
+		    \multicolumn{1}{|c|}{\multirow{4}*{1.35}}	& \multicolumn{1}{|c|}{4} & \multicolumn{1}{|c|}{\multirow{4}*{4}} & \multicolumn{1}{|c|}{0.0144} & \multicolumn{1}{|c|}{\multirow{2}*{\textbf{0.5}}} & \multicolumn{1}{|c|}{0.14} & \multicolumn{1}{|c|}{\multirow{2}*{\textbf{0.55}}} \\
+		    
+			\cline{3-5} \cline{10-10} \cline{14-14} \cline{16-16} \cline{18-18}
+			
+			\multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{8b} & \multicolumn{1}{|c|}{136.3} & \multicolumn{1}{|c|}{2.27} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{0.23} & \multicolumn{1}{|c|}{} &
+			\multicolumn{1}{|c|}{} &
+			\multicolumn{1}{|c|}{}	& \multicolumn{1}{|c|}{8} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{0.0288} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{0.26} & \multicolumn{1}{|c|}{} \\
+			
+			\cline{2-5} \cline{8-11} \cline{14-14} \cline{16-19}
+			
+			\multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{\multirow{2}*{SAR/SS}} & \multicolumn{1}{|c|}{4b} & \multicolumn{1}{|c|}{241} & \multicolumn{1}{|c|}{6.98} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{\multirow{2}*{50.7}} & \multicolumn{1}{|c|}{\multirow{2}*{1.9}} & \multicolumn{1}{|c|}{0.36} & \multicolumn{1}{|c|}{\multirow{2}*{\textbf{0.54}}} &
+			\multicolumn{1}{|c|}{} &
+			\multicolumn{1}{|c|}{}	& \multicolumn{1}{|c|}{4} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{0.0144} & \multicolumn{1}{|c|}{\multirow{2}*{\textbf{0.4}}} & \multicolumn{1}{|c|}{0.38} & \multicolumn{1}{|c|}{\multirow{2}*{\textbf{0.53}}} \\
+			
+			\cline{3-5} \cline{10-10} \cline{14-14} \cline{16-16} \cline{18-18}
+			
+			\multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{10b} & \multicolumn{1}{|c|}{473.5} & \multicolumn{1}{|c|}{6.98} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{0.68} & \multicolumn{1}{|c|}{} &
+			\multicolumn{1}{|c|}{} &
+			\multicolumn{1}{|c|}{}	& \multicolumn{1}{|c|}{10} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{0.036} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{0.71} & \multicolumn{1}{|c|}{} \\
+			
+			\hline
+			
+		\end{tabular}
+	}
+		\label{tab2}
 	\end{center}
 \end{table*}
