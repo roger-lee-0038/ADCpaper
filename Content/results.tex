@@ -144,15 +144,11 @@ Compared to the high-precision conversion mode, the low-precision conversion mod
 
 Table~\ref{tab1} summarizes the key characteristics of the proposed SS and SAR/SS ADC designs.
 And a comparison with previous reported configurable ADCs is also provided. 
-We take the precision-adaptive SAR ADCs into the comparison because they have similar precision and sampling rate configurations to our design, and given a relatively loose area constraint SAR ADCs are also applicable to column-parallel image processing.
+We take the precision-adaptive SAR ADCs into comparison because on the one hand they have similar precision and sampling rate configurations to our design, on the other hand, SAR ADCs are also applicable to column-parallel image processing given a relatively loose area constraint.
 
-It is highlighted that our design achieves better power-scaling performance than previous reported ADCs. And the presented power-scaling percents of the SAR ADCs can be actually worse because in these works only the power consumption of the core ADC circuit is measured, while we have considered the power concumption of the whole implementation, including the bandgap, voltage divider, bias circuits and reference buffers. Therefore,     
+It is highlighted that our design achieves better power-scaling performance than previous works. And the presented power-scaling percents of the SAR ADCs can actually be worse because in these works only the power consumption of the core ADC circuit is measured, while we have analysed the power consumption of the whole implementation, including the bandgap, voltage divider, bias circuits and reference buffers. Therefore, with fair considerations of the peripheral fixed parts of energy, the power-scaling performance of our design can definitely be more competitive.
 
-showing that this work can achieve similar power-scaling performance to \cite{zhu_6--10-bit_2015}, while the power consumption of reference voltages is not included in \cite{zhu_6--10-bit_2015}. In addition, easier-to-implement control logic is required in our design. \cite{el-halwagy_100-mss5-gss_2018} actually focused on dynamically adjusted the ADC's sampling rate rather than power consumption with adaptive-precision, %since this work targeted the transceiver for different communication standards. 
-Therefore, given the three typical different precision modes in \cite{el-halwagy_100-mss5-gss_2018}, the power consumtion actually increases as the precision decreases. 
-
-It is noted that only this work is targeting image processing in the edge devices, and given a $512\times512$ pixel array, the corresponding frame rate applying the proposed 512-column-parallel SS and SAR/SS ADC designs will be 162fps and 193fps. Although the overall power consumption in our design can be further scaled down, the power-saving effectiveness with adaptive-precision is fairly demonstrated.
-
+It is noted that the overall power consumption of the proposed implementation is relatively high. However, since the design studies are targeting to exploit the power-scaling capabilities with applying reasonable power gating strategies, rather than shrinking the power consumption as more as possible for the ADCs equipped with fixed-precision, instructive power-saving performance is still effectively demonstrated.
 
 \begin{table*}[htbp]
 	\caption{PERFORMANCE AND COMPARISON}
