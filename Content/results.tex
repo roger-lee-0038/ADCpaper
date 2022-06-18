@@ -143,15 +143,15 @@ Compared to the high-precision conversion mode, the low-precision conversion mod
 \subsection{Performance Summary and Comparison}\label{summary}
 
 Table~\ref{tab1} summarizes the key characteristics of the proposed SS and SAR/SS ADC designs,
-along with comparison of a previously reported configurable ADC design~\cite{zhu_6--10-bit_2015}. 
-This particular prior work is chosen because it supports adaptive precision and has similar precision 
+along with comparison of previously reported configurable ADC designs~\cite{zhu_06_2013，yip_resolution-reconfigurable_2013}. 
+These prior works are chosen because they support adaptive precision and has similar precision 
 and sampling rate configurations to our work. As shown in Table~\ref{tab1}, our proposed work 
-achieves better power-scaling performance than the previous work. We also like to point out that
+achieves better power-scaling performance than the previous works. We also like to point out that
 the power-scaling results reported by the prior work only consider the core ADC circuit
 and ignore the peripheral circuits. Our results, on the other hand, include the complete 
 design, including the bandgap, voltage divider, bias circuits and reference buffers. Therefore, 
 compared to the previous work, the power-scaling performance advantage of our work should
-be higher than the reported results compared to the prior work. 
+be higher than the reported results compared to the prior works. 
 
 It is also important to point out that the proposed power-gating method is a general one 
 that can be applied to other state-of-the-art ADC architectures and realize power-efficient 
@@ -166,7 +166,7 @@ adaptive-precision ADC solutions.
 	\begin{center}
 		\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
 			\hline
-			\textbf{}& \multicolumn{2}{|c|}{\cite{zhu_6--10-bit_2015}} & \multicolumn{2}{|c|}{\cite{yip_resolution-reconfigurable_2013}} & \multicolumn{4}{|c|}{This work} \\
+			\textbf{}& \multicolumn{2}{|c|}{\cite{zhu_06_2013}} & \multicolumn{2}{|c|}{\cite{yip_resolution-reconfigurable_2013}} & \multicolumn{4}{|c|}{This work} \\
 			\hhline{|=========|}
 			%\iffalse
 			\textbf{Process}& \multicolumn{2}{|c|}{180nm} & \multicolumn{2}{|c|}{65nm} & \multicolumn{4}{|c|}{65nm} \\
@@ -178,11 +178,7 @@ adaptive-precision ADC solutions.
 			%\hline
 			\textbf{Architecture}& \multicolumn{2}{|c|}{SAR} & \multicolumn{2}{|c|}{SAR} & \multicolumn{2}{|c|}{SS} & \multicolumn{2}{|c|}{SAR/SS}\\
 			\hline
-<<<<<<< HEAD
-			\textbf{Precision(bits)} & 8 & 10 & 8 & 10 & 4 & 8 & 4 & 10 \\
-=======
 			\textbf{Precison(bits)} & 8 & 10 & 6 & 10 & 4 & 8 & 4 & 10 \\
->>>>>>> db967e55d12c768c3d527a60cac59d3941a858d2
 			\hline
 			\textbf{Sampling rate(Hz)}& \multicolumn{2}{|c|}{100K} & \multicolumn{2}{|c|}{20K} & \multicolumn{2}{|c|}{83K} & \multicolumn{2}{|c|}{99K} \\
 			\hline
