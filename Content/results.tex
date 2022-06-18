@@ -148,14 +148,14 @@ We take the precision-adaptive SAR ADCs into comparison because on the one hand 
 
 It is highlighted that our design achieves better power-scaling performance than previous works. And the presented power-scaling percents of the SAR ADCs can actually be worse because in these works only the power consumption of the core ADC circuit is measured, while we have analysed the power consumption of the whole implementation, including the bandgap, voltage divider, bias circuits and reference buffers. Therefore, with fair considerations of the peripheral fixed parts of energy, the power-scaling performance of our design can definitely be more competitive.
 
-It is noted that the overall power consumption of the proposed implementation is relatively high. However, since our design studies are targeting to exploit the power-scaling capabilities with applying reasonable power gating strategies, rather than shrinking the power consumption as more as possible for the ADCs equipped with fixed-precision, instructive power-saving effectiveness is still demonstrated.
+It is noted that the overall power consumption of the proposed implementation is relatively large with high supply voltages. However, since our design studies are targeting to exploit the power-scaling capabilities with applying reasonable power gating strategies, rather than shrinking the power consumption as more as possible for the ADCs equipped with fixed-precision, instructive power-saving effectiveness is still demonstrated.
 
 \begin{table*}[htbp]
 	\caption{PERFORMANCE AND COMPARISON}
 	\begin{center}
 		\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
 			\hline
-			\textbf{}& \multicolumn{2}{|c|}{\cite{zhu_6--10-bit_2015}} & \multicolumn{2}{|c|}{\cite{zhu_6--10-bit_2015}} & \multicolumn{4}{|c|}{This work} \\
+			\textbf{}& \multicolumn{2}{|c|}{\cite{zhu_6--10-bit_2015}} & \multicolumn{2}{|c|}{\cite{yip_resolution-reconfigurable_2013}} & \multicolumn{4}{|c|}{This work} \\
 			\hhline{|=========|}
 			%\iffalse
 			\textbf{Process}& \multicolumn{2}{|c|}{180nm} & \multicolumn{2}{|c|}{65nm} & \multicolumn{4}{|c|}{65nm} \\
@@ -167,7 +167,7 @@ It is noted that the overall power consumption of the proposed implementation is
 			%\hline
 			\textbf{Architecture}& \multicolumn{2}{|c|}{SAR} & \multicolumn{2}{|c|}{SAR} & \multicolumn{2}{|c|}{SS} & \multicolumn{2}{|c|}{SAR/SS}\\
 			\hline
-			\textbf{Precison(bits)} & 8 & 10 & 8 & 10 & 4 & 8 & 4 & 10 \\
+			\textbf{Precison(bits)} & 8 & 10 & 6 & 10 & 4 & 8 & 4 & 10 \\
 			\hline
 			\textbf{Sampling rate(Hz)}& \multicolumn{2}{|c|}{100K} & \multicolumn{2}{|c|}{20K} & \multicolumn{2}{|c|}{83K} & \multicolumn{2}{|c|}{99K} \\
 			\hline
@@ -175,13 +175,13 @@ It is noted that the overall power consumption of the proposed implementation is
 			%\hline
 			%\textbf{Throughput (samples per second)}&	50.7M \\ 
 			%\hline
-			\textbf{SNDR(dB)} & 47.4 & 60.5 & 47.0 & 55.0 & 23.83 & 46.64 & 24.25 & 57.87 \\
+			\textbf{SNDR(dB)} & 47.4 & 60.5 & 36.6 & 55.0 & 23.83 & 46.64 & 24.25 & 57.87 \\
 			\hline
-			\textbf{ENOB(bits)}& 7.58 & 9.76 & 7.51 & 8.84 & 3.67 & 7.46 & 3.74 & 9.32 \\
+			\textbf{ENOB(bits)}& 7.58 & 9.76 & 5.79 & 8.84 & 3.67 & 7.46 & 3.74 & 9.32 \\
 			\hline
-			\textbf{Power consumption}& 0.32$\mu$W & 0.52$\mu$W &  0.146$\mu$W & 0.206$\mu$W & 40.8$\mu$W & 76.2$\mu$W & 137.1$\mu$W & 256.1$\mu$W\\
+			\textbf{Power consumption}& 0.32$\mu$W & 0.52$\mu$W &  0.116$\mu$W & 0.226$\mu$W & 40.8$\mu$W & 76.2$\mu$W & 137.1$\mu$W & 256.1$\mu$W\\
 			\hline
-			\textbf{Power-scaling performance}& 62\% & 100\% & 71\% & 100\% & \textbf{54}\% & 100\% & \textbf{54}\% & 100\% \\
+			\textbf{Power-scaling performance}& 62\% & 100\% & 56\% & 100\% & \textbf{54}\% & 100\% & \textbf{54}\% & 100\% \\
 			\hline
 			%\fi
 			%\textbf{FOM$^{\mathrm{a}}$}& 103.64/4.05 pJ/step\\
