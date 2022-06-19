@@ -49,7 +49,7 @@ in Fig.~\ref{SSWAVE}) is physically attached to the exposure time of the pixels,
 noise caused by the varying reference voltages. 
 
 Switched-capacitor operational amplifiers are commonly used in CDS circuits (shown in Fig.~\ref{CDS}). According to the law of charge conservation, 
-the output voltage of the CDS circuits (in PHASE2 of Fig.~\ref{SSWAVE}) can be calculated as \eqref{eq1}, consistent with the requirements. It is also noticed that the input offset cancellation (IOS) is realized \cite{razavi_design_1992}, 
+the output voltage of the CDS circuits (in PHASE2 of Fig.~\ref{SSWAVE}) can be calculated as \eqref{eq1}, consistent with the requirements. Input offset cancellation (IOS) is also implemented~\cite{razavi_design_1992}, 
 which is necessary because the amplifiers in different columns may have different offset voltages.
 
 \begin{figure}[htbp]
@@ -93,8 +93,7 @@ and the output buffer has the largest size in order to drive hundreds of column-
 
 The comparators are used to compare the CDS circuit output with the ramp signal from the ramp generator. 
 In SS ADC, two-stage open-loop comparators can be applied as shown in Fig.~\ref{COM}. According to the law of charge conservation, 
-ne
-the comparators’ output (PHASE3 shown in Fig.~\ref{SSWAVE}) can be computed as \eqref{eq3}. The comparison is dominated by $V_{ramp}-V_{cds}$ as long as the amplifiers’ open-loop gain 
+the comparator output (PHASE3 shown in Fig.~\ref{SSWAVE}) can be computed as \eqref{eq3}. The comparison is dominated by $V_{ramp}-V_{cds}$ as long as the amplifiers’ open-loop gain 
 is large enough while the IOS is also realized.% In addition, the comparators’ speed relies on the bandwidth and slew rate of the amplifiers.
 
 \begin{figure}[htbp]
@@ -225,13 +224,13 @@ Since column-parallel ADC not only has high column-parallel current that can be 
 
 \subsection{Adaptive-Precision Implementation for SS ADC}\label{gating2}
 
-As evaluated in Sect.~\ref{result}, SS ADC power consumption is mainly taken up by the column-parallel comparators, bias circuits, and the output buffer of the ramp generator. 
+As evaluated in Sect.~\ref{result}, SS ADC power consumption is mainly contributed by column-parallel comparators, bias circuits, and output the buffer of ramp generator. 
 Considering that all bias circuits are settled down only once (tens of microseconds after the whole system is powered up) and then other circuits can be settled down quickly by the distributed 
-bias circuits, we only apply power gating to the amplifiers in the comparators and the output buffer in the ramp generator.
+bias circuits, it is only necessary to apply power gating to the amplifiers in the comparators and the output buffer in the ramp generator.
 
 For low-precision conversion, the thermometer-code counter should be extended to support switching the capacitors in CDAC 16 by 16 instead of one by one and thereby the ramp signal can reach $V_{refh}$ in 16 steps (for 4 bits) instead of in 256 steps (for 8 bits). 
-After the 16 steps, the comparators and the output buffer can be powered off for an extended period of time, leaving the related signals decrease gradually.
-The related waveform are shown in Fig.~\ref{SS_pg}. 
+After the 16 steps, comparators and output buffer can be powered off for an extended period of time, leaving the related signals decrease gradually.
+The related waveform is shown in Fig.~\ref{SS_pg}. 
 
 \begin{figure}[htbp]
 	\centerline{\includegraphics[width=3.2in]{./Figures/SS_pg.eps}}
@@ -239,9 +238,9 @@ The related waveform are shown in Fig.~\ref{SS_pg}.
 	\label{SS_pg}
 \end{figure} 
 
-To avoid the decreasing output of comparators causing extra unwanted latch for the low-precision conversion results, an NMOS switch and a PMOS switch are inserted into the two inverters following the comparator as shown in Fig.~\ref{MATE}. 
-For high-precision conversion, the gating signal will be low-level and turn on the PMOS switch, thus the second inverter output will be the same as the comparator output, which is either low-level or high-level. 
-For low-precision conversion, the NMOS switch is turned on by the high-level gating signal and the second inverter input is connected to the ground. Therefore, the output signal of the two inverters will remain high-level, preventing unpredictable latch caused by the comparator metastable output.
+To avoid the decreasing comparator outputs causing extra latches for the low-precision conversion results, an NMOS switch and a PMOS switch are inserted into the two inverters following the comparator as shown in Fig.~\ref{MATE}. 
+For high-precision conversion, the gating signal is low-level and turns on the PMOS switch, thus the second inverter output is the same as the comparator output, which is either low-level or high-level. 
+For low-precision conversion, the NMOS switch is turned on by the high-level gating signal and the second inverter input is connected to the ground. Therefore, the output signal of the two inverters will remain high-level, avoiding unpredictable latch caused by the comparator metastable output.
 
 \begin{figure}[htbp]
 	\centerline{\includegraphics[width=2.5in]{./Figures/MATE.eps}}
@@ -252,14 +251,14 @@ For low-precision conversion, the NMOS switch is turned on by the high-level gat
 \subsection{Adaptive-Precision Implementation for SAR/SS ADC}\label{gating3}
 
 As evaluated in Sect.~\ref{result}, SAR/SS ADC power consumption is mainly contributed by the column-parallel buffers of reference voltages in SAR sub-ADC.
-It is because that these buffers need to drive relatively large and changing load capacitance, with relatively large static and dynamical current.
+It is because that these buffers need to drive relatively large and varying load capacitance, with relatively large static and dynamical current.
 Therefore, gating these buffers will significantly reduce both static power consumption and dynamical power consumption for the ADC.
 
 In addition, the CDS circuits and comparators in SAR/SS ADC also consume a significant amount of energy. However, we only choose to take the comparators under control because they can conveniently share the same gating signal with the buffers. And the gating signal of the buffers can also be the same as the start signal of the ramp generator. Therefore, gating the buffers and comparators in SAR/SS ADC introduces limited extra control logic with a few shared level-shifters and inverters.
 
-Furthermore, the power distribution results shown in Sect.~\ref{result} demonstrate that adaptive-precision tuning is unnecessary within the ramp generator of SAR/SS ADC, which means the counter in SAR/SS ADC do not need to support two modes for adaptive-precision as in SS ADC.
+Furthermore, the power distribution results shown in Sect.~\ref{result} demonstrate that adaptive-precision tuning is unnecessary within the ramp generator of SAR/SS ADC, which means the counter in SAR/SS ADC does not need to support two modes for adaptive-precision as in SS ADC.
 
-The signal waveform is shown in Fig.~\ref{SAR_pg}. As we can see, for low-precision conversion, the SAR buffers and comparators are power gated. Therefore, although the ramp signal is generated as usual, the 4-bit results will be completely generated by the SAR logic. 
+The signal waveform is shown in Fig.~\ref{SAR_pg}. As we can see, for low-precision conversion, the SAR buffers and comparators are power gated, yet the ramp signal is generated as usual, and the 4-bit results is produced by the SAR logic. 
 
 \begin{figure}[htbp]
 	\centerline{\includegraphics[width=3.5in]{./Figures/SAR_pg.eps}}
