@@ -1,13 +1,10 @@
 \subsection{Design Discussions}\label{discussion}
 
-In this section, we discuss some of the adaptive precision design decisions regarding the SS ADC and SAR/SS ADC designs. 
-
-%key design decisions regarding the 4/8-bit adaptive-precision on the SS ADC and 4/10-bit adaptive-precision on the SAR/SS ADC is discussed.
-
+We next discuss key adaptive precision design decisions regarding the SS ADC and SAR/SS ADC designs. 
 In this work, a 4-bit setting is chosen as the low-precision mode for both ADC designs. This 
-setting is designed in conjunction with recent work on adaptive-precision deep learning algorithm 
-designs to strike a good tradeoff between the energy efficiency and accuracy in adaptive data analysis 
-pipelines. 
+setting is decided in conjunction with recent work on recently proposed adaptive-precision deep learning algorithms 
+to strike a good tradeoff between the energy efficiency and accuracy in adaptive data analysis 
+pipelines~\cite{leibe_xnor-net_2016,li_ternary_2016,park_energy-efficient_2018}. 
 
 %First, why we chose 4-bit conversion as the low-precision mode of the ADC is mentioned in Sect.~\ref{related}. It is because that 4-bit precision can provide a good compromise between the energy efficiency and algorithm accuracy. Therefore, the following discussion focuses on the considerations for high-precision bits.
 
