@@ -1,28 +1,28 @@
-\section{Evaluation Results}\label{result}
+\section{ADC EnergyY Evaluation Results}\label{result}
 
 This section presents quantitative evaluation results of the proposed adaptive-precision ADC 
 designs, including a column-parallel Single-Slope (SS) ADC and a column-parallel successive 
 approximation register (SAR)/SS ADC. Both ADC designs are implemented using TSMC 65nm processing,
 and simulated in Virtuoso’s AMS Environment. Circuit power consumption is collectively estimated
 based on the average transient current of different ADC modules given one complete sampling and 
-conversion period. Power savings are then estimated by comparing the power consumption of the
+conversion period. Energy savings are then estimated by comparing the power consumption of the
 low-precision conversion mode against that of the high-precision conversion mode. 
 
-Specifically, the detailed power-breakdown and power-saving results of the proposed SS and SAR/SS ADC designs are presented in \ref{SS power} and \ref{SAR power}. And the key design characteristics are summarized in \ref{summary}, with a comparison between our work and previous reported configurable ADCs.
+Specifically, the detailed energy-breakdown and energy-saving results of the proposed SS and SAR/SS ADC designs are presented in \ref{SS power} and \ref{SAR power}. And the key design characteristics are summarized in \ref{summary}, with a comparison between our work and previous reported configurable ADCs.
 
-\subsection{Power-scaling Performance of the SS ADC Design}\label{SS power}
+\subsection{Energy-scaling Performance of the SS ADC Design}\label{SS power}
 %Table~\ref{tab1} summarizes the key design characteristics of the SS ADC design. Considering a 
 %$512\times512$ pixel array, the frame rate is 162fps.  The SNDR of the SS ADC is 23.83/46.64 dB, 
 %which means the ENOB is 3.67/7.46 bits.  
 
-Fig.~\ref{SSresults1} shows the detailed power-breakdown results of the SS ADC design,
+Fig.~\ref{SSresults1} shows the detailed energy-breakdown results of the SS ADC design,
 which demonstrates that the power consumption of the SS ADC design is mainly contributed by 
 the column-parallel comparators and the output buffer of the ramp generator, both of which 
-can be effectively regulated via power gating for low-power conversion. The peripheral circuits include a bandgap and voltage divider, level-shift circuits and global buffers.
+can be effectively regulated via power gating for low-precision conversion. The peripheral circuits include a bandgap and voltage divider, level-shift circuits and global buffers.
 
-The power-saving results are also presented in Fig.~\ref{SSresults2}, where the annotated power consumption is measured and divided by column. It shows that the total power consumption of the low-precision conversion mode is 40.8uW/column, and the power consumption of the high-precision conversion mode is 76.2uW/column. 
+The energy-saving results are also presented in Fig.~\ref{SSresults2}, where the annotated power consumption is measured and divided by column. It shows that the total power consumption of the low-precision conversion mode is 40.8uW/column, and the power consumption of the high-precision conversion mode is 76.2uW/column. 
 Compared to the high-precision conversion mode, the low-precision conversion mode can reduce 
-the power consumption approximately 50\%, which is contributed by the power-gating-regulated comparators and buffer.
+the energy approximately 50\%, which is contributed by the power-gating-regulated comparators and buffer.
 
 \iffalse
 \begin{table}[htbp]
@@ -65,13 +65,13 @@ the power consumption approximately 50\%, which is contributed by the power-gati
 
 \begin{figure}[htbp]
 	\centerline{\includegraphics[width=3.5in]{./Figures/SSResults1.eps}}
-	\caption{Power-breakdown results of the SS ADC design.}
+	\caption{Energy-breakdown results of the SS ADC design.}
 	\label{SSresults1}
 \end{figure}
 
 \begin{figure}[htbp]
 	\centerline{\includegraphics[width=3.5in]{./Figures/SSResults2.eps}}
-	\caption{Power-saving results of the SS ADC design.}
+	\caption{Energy-saving results of the SS ADC design.}
 	\label{SSresults2}
 \end{figure} 
 
@@ -82,12 +82,12 @@ the power consumption approximately 50\%, which is contributed by the power-gati
 %design, 1 step is equivalent to 2 clock periods. The SNDR is 24.25/57.87 dB and the ENOB is 3.74/9.32 bits, 
 %which is inline with the design specifications. 
 
-Fig.~\ref{SARresults1} shows the detailed power-breakdown results of the SAR/SS ADC design, which 
+Fig.~\ref{SARresults1} shows the detailed energy-breakdown results of the SAR/SS ADC design, which 
 demonstrates that the power consumption of the SAR/SS ADC design is mainly contributed by the column-parallel buffers of the reference voltages in the sub-ADCs, and power gating can effectively minimize the power consumption of these 
 power-dominant components. 
 
-The power-saving results are also presented in Fig.~\ref{SARresults2}, showing that the total power consumption of the SAR/SS ADC design is 256.1uW/column for the high-precision conversion mode and 137.1uW/column for the low-precision conversion mode. 
-Compared to the high-precision conversion mode, the low-precision conversion mode can reduce the power consumption approximately 50\%.
+The energy-saving results are also presented in Fig.~\ref{SARresults2}, showing that the total power consumption of the SAR/SS ADC design is 256.1uW/column for the high-precision conversion mode and 137.1uW/column for the low-precision conversion mode. 
+Compared to the high-precision conversion mode, the low-precision conversion mode can reduce the energy approximately 50\%.
 
 \iffalse
 \begin{table}[htbp]
@@ -130,33 +130,31 @@ Compared to the high-precision conversion mode, the low-precision conversion mod
 
 \begin{figure}[htbp]
 	\centerline{\includegraphics[width=3.5in]{./Figures/SARResults1.eps}}
-	\caption{Power-breakdown results of the SAR/SS ADC design.}
+	\caption{Energy-breakdown results of the SAR/SS ADC design.}
 	\label{SARresults1}
 \end{figure} 
 
 \begin{figure}[htbp]
 	\centerline{\includegraphics[width=3.5in]{./Figures/SARResults2.eps}}
-	\caption{Power-saving results of the SAR/SS ADC design.}
+	\caption{Energy-saving results of the SAR/SS ADC design.}
 	\label{SARresults2}
 \end{figure} 
 
 \subsection{Performance Summary and Comparison}\label{summary}
 
 Table~\ref{tab1} summarizes the key characteristics of the proposed SS and SAR/SS ADC designs,
-along with comparison of previously reported configurable ADC designs~\cite{zhu_06_2013，yip_resolution-reconfigurable_2013}. 
+along with comparison of previously reported configurable ADC designs~\cite{zhu_06_2013,yip_resolution-reconfigurable_2013}. 
 These prior works are chosen because they support adaptive precision and has similar precision 
 and sampling rate configurations to our work. As shown in Table~\ref{tab1}, our proposed work 
-achieves better power-scaling performance than the previous works. We also like to point out that
-the power-scaling results reported by the prior work only consider the core ADC circuit
+achieves better energy-scaling performance than the previous works. We also like to point out that
+the energy-scaling results reported by the prior work only consider the core ADC circuit
 and ignore the peripheral circuits. Our results, on the other hand, include the complete 
 design, including the bandgap, voltage divider, bias circuits and reference buffers. Therefore, 
-compared to the previous work, the power-scaling performance advantage of our work should
+compared to the previous work, the energy-scaling performance advantage of our work should
 be higher than the reported results compared to the prior works. 
 
-Table.~\ref{tab2} shows the power-saving analysis for a data sensing and communicating pipeline with applying the proposed adaptive-precision ADCs. The parametric power consumption model is developed in \cite{lubana_digital_2018}, and we fit the parameters $a$, $b$ of our design into this model based on the evaluation results in \ref{result}. As we can see, the proposed adaptive-precision ADCs are able to reduce the power consumption of both data sensing and communicating by approximately 50\%. Therefore, the proposed power gating method will be promising for improving the energy efficiency of the edge devices.  
-
 It is also important to point out that the proposed power-gating method is a general one 
-that can be applied to other state-of-the-art ADC architectures and realize power-efficient 
+that can be applied to other state-of-the-art ADC architectures and realize energy-efficient 
 adaptive-precision ADC solutions. 
 
 %It is highlighted that our design achieves better power-scaling performance than previous works. And the presented power-scaling percents of the SAR ADCs can actually be worse because in these works only the power consumption of the core ADC circuit is measured, while we have analysed the power consumption of the whole proposed implementation, including the bandgap, voltage divider, bias circuits and reference buffers. Therefore, with fairly considering the peripheral fixed parts of energy, the power-scaling performance of our design can definitely be more competitive.
@@ -194,7 +192,7 @@ adaptive-precision ADC solutions.
 			\hline
 			\textbf{Power consumption}& 0.32$\mu$W & 0.52$\mu$W &  0.116$\mu$W & 0.226$\mu$W & 40.8$\mu$W & 76.2$\mu$W & 137.1$\mu$W & 256.1$\mu$W\\
 			\hline
-			\textbf{Power-scaling percent}& 62\% & 100\% & 56\% & 100\% & \textbf{54}\% & 100\% & \textbf{54}\% & 100\% \\
+			\textbf{Energy-scaling percent}& 62\% & 100\% & 56\% & 100\% & \textbf{54}\% & 100\% & \textbf{54}\% & 100\% \\
 			\hline
 			%\fi
 			%\textbf{FOM$^{\mathrm{a}}$}& 103.64/4.05 pJ/step\\
@@ -202,58 +200,5 @@ adaptive-precision ADC solutions.
 			%\multicolumn{2}{l}{$^{\mathrm{a}}\textbf{FOM}=(\textbf{Power}\ast \textbf{Conversion}\ \textbf{time})/2^{\textbf{ENOB}}$ }	    
 		\end{tabular}
 		\label{tab1}
-	\end{center}
-\end{table*}
-
-\begin{table*}[htbp]
-	\caption{POWER-SAVING ANALYSIS FOR A SENSING AND COMMUNICATING PIPELINE \\WITH THE PROPOSED ADAPTIVE-PRECISION ADCS}
-	\begin{center}
-		\scalebox{0.7}{
-		\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
-			\hline
-			
-			\multicolumn{3}{|c|}{}& \multicolumn{8}{|c|}{Image Sensor Energy} &\multicolumn{6}{|c|}{MIPI Communication Energy} &\multicolumn{2}{|c|}{Sensing\&Communicating Energy} \\
-			\hhline{|===================|} 			
-			\hline
-			\multicolumn{3}{|c|}{Formulation} & \multicolumn{8}{|c|}{$E_{sensing}=a\frac{R^2}{f}+b\frac{R}{f}+cT_{exp}$} 
-			& \multicolumn{6}{|c|}{$E_{comm}={P_{comm}\left(1+h\right)\frac{pR}{BR}}$} 
-			& \multicolumn{2}{|c|}{$E_{total}=E_{sensing}+E_{comm}$} \\
-			
-			\hline
-			
-			\multicolumn{3}{|c|}{Item} & \makecell[c]{$a$\\(mW/M-pixels)} & \makecell[c]{$b$\\(mW)} & \makecell[c]{$c$\\(mW)} & \makecell[c]{$R$\\(pixels)} & \makecell[c]{$f$\\(MHz)} 
-			& \makecell[c]{$T_{exp}$\\($\mu$s)} & \makecell[c]{$E_{sensing}$\\(mJ)} & percent 
-			& \makecell[c]{$P_{comm}$\\(mW)} & $h$ & \makecell{$p$\\(bits)} & \makecell[c]{$BR$\\(Gb/s)} & \makecell[c]{$E_{comm}$\\(mJ)} & percent
-			& \makecell{$E_{total}$\\(mJ)} & percent \\ 	
-			
-			\hline
-			
-		    \multicolumn{1}{|c|}{\multirow{4}*{Analysis}} & \multicolumn{1}{|c|}{\multirow{2}*{SS}} & \multicolumn{1}{|c|}{4b} & \multicolumn{1}{|c|}{70.6} & \multicolumn{1}{|c|}{2.43} & \multicolumn{1}{|c|}{\multirow{4}*{141.8}} & \multicolumn{1}{|c|}{\multirow{4}*{512$\times$512}} & \multicolumn{1}{|c|}{\multirow{2}*{42.5}} & \multicolumn{1}{|c|}{\multirow{2}*{1.8}} & \multicolumn{1}{|c|}{0.13} & \multicolumn{1}{|c|}{\multirow{2}*{\textbf{0.55}}} &
-		    \multicolumn{1}{|c|}{\multirow{4}*{40.7}} &
-		    \multicolumn{1}{|c|}{\multirow{4}*{1.35}}	& \multicolumn{1}{|c|}{4} & \multicolumn{1}{|c|}{\multirow{4}*{4}} & \multicolumn{1}{|c|}{0.0144} & \multicolumn{1}{|c|}{\multirow{2}*{\textbf{0.5}}} & \multicolumn{1}{|c|}{0.14} & \multicolumn{1}{|c|}{\multirow{2}*{\textbf{0.55}}} \\
-		    
-			\cline{3-5} \cline{10-10} \cline{14-14} \cline{16-16} \cline{18-18}
-			
-			\multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{8b} & \multicolumn{1}{|c|}{136.3} & \multicolumn{1}{|c|}{2.27} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{0.23} & \multicolumn{1}{|c|}{} &
-			\multicolumn{1}{|c|}{} &
-			\multicolumn{1}{|c|}{}	& \multicolumn{1}{|c|}{8} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{0.0288} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{0.26} & \multicolumn{1}{|c|}{} \\
-			
-			\cline{2-5} \cline{8-11} \cline{14-14} \cline{16-19}
-			
-			\multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{\multirow{2}*{SAR/SS}} & \multicolumn{1}{|c|}{4b} & \multicolumn{1}{|c|}{241} & \multicolumn{1}{|c|}{6.98} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{\multirow{2}*{50.7}} & \multicolumn{1}{|c|}{\multirow{2}*{1.9}} & \multicolumn{1}{|c|}{0.36} & \multicolumn{1}{|c|}{\multirow{2}*{\textbf{0.54}}} &
-			\multicolumn{1}{|c|}{} &
-			\multicolumn{1}{|c|}{}	& \multicolumn{1}{|c|}{4} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{0.0144} & \multicolumn{1}{|c|}{\multirow{2}*{\textbf{0.4}}} & \multicolumn{1}{|c|}{0.38} & \multicolumn{1}{|c|}{\multirow{2}*{\textbf{0.53}}} \\
-			
-			\cline{3-5} \cline{10-10} \cline{14-14} \cline{16-16} \cline{18-18}
-			
-			\multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{10b} & \multicolumn{1}{|c|}{473.5} & \multicolumn{1}{|c|}{6.98} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{0.68} & \multicolumn{1}{|c|}{} &
-			\multicolumn{1}{|c|}{} &
-			\multicolumn{1}{|c|}{}	& \multicolumn{1}{|c|}{10} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{0.036} & \multicolumn{1}{|c|}{} & \multicolumn{1}{|c|}{0.71} & \multicolumn{1}{|c|}{} \\
-			
-			\hline
-			
-		\end{tabular}
-	}
-		\label{tab2}
 	\end{center}
 \end{table*}
