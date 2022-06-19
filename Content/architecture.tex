@@ -69,11 +69,11 @@ which is necessary because the amplifiers in different columns may have differen
 
 \subsubsection{Ramp Generator}
 
-As shown in Fig.~\ref{RAMP}, the ramp generator in SS ADC consists of a thermometer-code counter and a capacitor digital-to-analog converter (CDAC). 
+As shown in Fig.~\ref{RAMP}, the ramp generator in SS ADC consists of a thermometer-code counter and a Capacitor Digital-to-Analog Converter (CDAC). 
 While the capacitors in CDAC are being switched one by one from $V_{refl}$ to $V_{vefh}$, the output voltage of the ramp generator is expressed as \eqref{eq2} according to the law of charge conservation. 
 In this equation, $N$ represents the number of switched capacitors and $M$ represents the total number of capacitors with the same size (for the 8-bit precision, the total number will be 255). 
 Therefore, in PHASE3 (shown in Fig.~\ref{SSWAVE}), the ramp signal changes in stages from $V_{refl}$ to $V_{refh}$, of which the range matches the output of CDS circuits. 
-The height of each stage is the least significant Bit (LSB) of the ADC conversion.
+The height of each stage is the Least Significant Bit (LSB) of the ADC conversion.
 
 The three buffers shown in Fig.~\ref{RAMP} ensure that the reference voltages and ramp signal have sufficient driving capabilities, 
 and the output buffer has the largest size in order to drive hundreds of column-parallel comparators.
@@ -113,8 +113,8 @@ is large enough while the IOS is also realized.% In addition, the comparators’
 \subsection{SAR/SS ADC Architecture Overview}\label{over2}
 
 %Fig.~\ref{SARADC} shows 
-The overall architecture of SAR/SS ADC is similar to that of SS ADC shown in Fig.~\ref{SSADC}. The key differences are that the comparators are replaced by low-precision (4bit) SAR sub-ADC, and
-the ramp generator is replaced by a resistor digital-to-analog converter (RDAC) with a one-hot code counter.
+The overall architecture of SAR/SS ADC is similar to that of SS ADC shown in Fig.~\ref{SSADC}. The key differences are that the comparators are replaced by low-precision (4bit) SAR sub-ADCs, and
+the ramp generator is replaced by a Resistor Digital-to-Analog Converter (RDAC) with a one-hot code counter.
 
 \iffalse
 \begin{figure}[htbp]
@@ -224,7 +224,7 @@ Since column-parallel ADC not only has high column-parallel current that can be 
 
 \subsection{Adaptive-Precision Implementation for SS ADC}\label{gating2}
 
-As evaluated in Sect.~\ref{result}, SS ADC power consumption is mainly contributed by column-parallel comparators, bias circuits, and output the buffer of ramp generator. 
+As evaluated in Sect.~\ref{result}, SS ADC power consumption is mainly contributed by column-parallel comparators, bias circuits, and the output buffer of ramp generator. 
 Considering that all bias circuits are settled down only once (tens of microseconds after the whole system is powered up) and then other circuits can be settled down quickly by the distributed 
 bias circuits, it is only necessary to apply power gating to the amplifiers in the comparators and the output buffer in the ramp generator.
 
@@ -250,7 +250,7 @@ For low-precision conversion, the NMOS switch is turned on by the high-level gat
 
 \subsection{Adaptive-Precision Implementation for SAR/SS ADC}\label{gating3}
 
-As evaluated in Sect.~\ref{result}, SAR/SS ADC power consumption is mainly contributed by the column-parallel buffers of reference voltages in SAR sub-ADC.
+As evaluated in Sect.~\ref{result}, SAR/SS ADC power consumption is mainly contributed by the column-parallel buffers of reference voltages in SAR sub-ADCs.
 It is because that these buffers need to drive relatively large and varying load capacitance, with relatively large static and dynamical current.
 Therefore, gating these buffers will significantly reduce both static power consumption and dynamical power consumption for the ADC.
 
