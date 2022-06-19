@@ -2,18 +2,18 @@
 
 There are limited prior work on adaptive-precision ADC design~\cite{zhu_06_2013,zhu_6--10-bit_2015,yip_resolution-reconfigurable_2013,el-halwagy_100-mss5-gss_2018}. 
 \cite{zhu_06_2013,yip_resolution-reconfigurable_2013,zhu_6--10-bit_2015} focused on a SAR ADC with splittable capacitor array for 8-10-bit or 6-10 bit adaptive-precision. 
-\cite{el-halwagy_100-mss5-gss_2018} presented a time-domain SAR/Flash ADC using voltage-controlled oscillators (VCOs). The ADC can be configured as a double sampling SAR ADC for the high-resolution modes or as a 4× asynchronous time-interleaved Flash ADCs for the high sampling rate modes.
-However, it is a known fact that it is difficult to implement VCO-used ADCs in the narrow readout channel pitch of the CMOS Image Sensor (CIS) due to its high circuit complexity~\cite{kim_area-efficient_2016}. In addition, a SAR ADC also introduces large area overhead to implement the Capacitor Digital-to-Analog Converter (CDAC)~\cite{funatsu_62_2015}.
+\cite{el-halwagy_100-mss5-gss_2018} presented a time-domain SAR/Flash ADC using voltage-controlled oscillators (VCOs). The ADC can be configured as a double sampling SAR ADC for a high-resolution mode or as a 4× asynchronous time-interleaved Flash ADCs for a high sampling rate mode.
+However, it is a known fact that it is difficult to implement VCO-used ADCs in the narrow readout channel pitch of CMOS image sensor (CIS) due to its high circuit complexity~\cite{kim_area-efficient_2016}. In addition, a SAR ADC also introduces large area overhead to implement the capacitor digital-to-analog converter (CDAC)~\cite{funatsu_62_2015}.
 Different from the prior work, we consider column-parallel SS ADC, which has been widely used for image processing applications, 
 thanks to its small area and high linearity~\cite{kim_11-bit_2021,nie_single_2020,kumagai_14-inch_2018,park_640_2020}. 
-In addition, SAR/SS ADCs have been studied~\cite{kim_area-efficient_2016,chen_12_2014} for reducing the A/D conversion time of 
-the SS ADC and the area of the SAR ADC.     
-In this work, we focus on enabling adaptive-precision for the SS and SAR/SS ADCs. Thanks to the SS conversion logic, exponential power 
+Recent work on SAR/SS ADCs~\cite{kim_area-efficient_2016,chen_12_2014} have been focusing on reducing the A/D conversion time of 
+SS ADC and area minimization of SAR ADC.     
+In this work, we focus on enabling adaptive-precision for SS and SAR/SS ADCs. Thanks to the SS conversion logic, exponential power 
 scaling capability can be achieved through fine-grained power gating strategies, which has hardly been exploited before.
 
 %Other works have tried to relieve the design specifications of ADCs by applying low-precision analog computing firstly close to the sensor~\cite{chen_asp_2016,liu_ns-cim_2020}. But high-precision ADCs and DNN processors are still required for complex tasks. Therefore, adaptive-precision tuning within ADCs remains competitive for efficient hardware reuse.
 
-The proposed work aims to enable energy-efficient edge intelligence.  Adaptive-precision deep learning algorithms have been intensively studied~\cite{leibe_xnor-net_2016,li_ternary_2016,park_energy-efficient_2018} to enable energy-efficient edge intelligence. These prior works often apply a precision lower bound to optimize energy efficiency while ensuring the necessary accuracy.  The proposed adaptive-precision ADC design needs to account for this accuracy requirement to enable a complete adaptive-precision data analytics pipeline. In this work, taking such constraint into consideration, we choose 4-bit conversion as the low-precision mode of the ADC, which achieves a good compromise between energy efficiency and algorithm accuracy. 
+Adaptive-precision deep learning algorithms have been intensively studied~\cite{leibe_xnor-net_2016,li_ternary_2016,park_energy-efficient_2018}. These prior works often apply a precision lower bound to optimize energy efficiency while ensuring the necessary accuracy.  The proposed adaptive-precision ADC method needs to account for this accuracy requirement to enable a complete adaptive-precision data analysis pipeline. In this work, taking such constraint into consideration, we choose 4-bit conversion as the low-precision mode of the ADC, which achieves a good compromise between energy efficiency and algorithm accuracy. 
 
 %Although these works are about downstream low-precision algorithms and relatively separated from the ADCs, the adaptive-precision design of ADCs needs to take the accuracy requirements of the algorithms into consideration for the complete pipeline. In this paper, we choose 4-bit conversion for the low-precision mode of the ADCs, with a trade off between the energy-saving capabilities of ADCs and accuracy loss of algorithms.
 
